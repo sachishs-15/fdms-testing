@@ -32,7 +32,8 @@ def customerLogin(email, password, status_code=200):
     try:
         global token
         response = post(url, headers={}, data=data, status_code=status_code, schema=schema)
-        token = response['token']
+        if 'token' in response:
+            token = response['token']
     except Exception as e:
         print(e)
         return False
@@ -60,7 +61,8 @@ def customerSignup(email, password, name, phone, address, status_code=200):
     try:
         global token
         response = post(url, headers={}, data=data, status_code=status_code, schema=schema)
-        token = response['token']
+        if 'token' in response:
+            token = response['token']
     except Exception as e:
         print(e)
         return False
