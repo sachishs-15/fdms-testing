@@ -13,7 +13,7 @@ schemaFail = {
 
 def get(url, headers, status_code=200, schema={}):
     response = requests.get(url, headers=headers)
-    if response.status_code == status_code:
+    if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
         )
@@ -35,7 +35,8 @@ def get(url, headers, status_code=200, schema={}):
 
 def post(url, headers, data, status_code=200, schema={}):
     response = requests.post(url, headers=headers, data=data)
-    if response.status_code == status_code:
+
+    if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
         )
@@ -57,7 +58,7 @@ def post(url, headers, data, status_code=200, schema={}):
 
 def put(url, headers, data, status_code=200, schema={}):
     response = requests.put(url, headers=headers, data=data)
-    if response.status_code == status_code:
+    if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
         )
@@ -79,7 +80,7 @@ def put(url, headers, data, status_code=200, schema={}):
 
 def delete(url, headers, status_code=200, schema={}):
     response = requests.delete(url, headers=headers)
-    if response.status_code == status_code:
+    if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
         )
