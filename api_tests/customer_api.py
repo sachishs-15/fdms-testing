@@ -1,6 +1,3 @@
-import requests
-import json
-from jsonschema import validate
 import os
 from dotenv import load_dotenv
 
@@ -205,6 +202,26 @@ def customerAddFavouriteRestaurant(restaurant_id, status_code=200):
         return False
     
     return True
+
+def customerRemoveFavouriteRestaurant(restaurant_id, status_code=200):
+    url = f"{BACKEND_API_URL}/customer/favourites/{restaurant_id}"
+    headers = {
+        "Authorization": f"Bearer {token}"
+    }
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'success': {'type': 'boolean'}
+        },
+    }
+
+    try:
+        response = delete(url, headers=headers, status_code=status_code, schema=schema)
+    except Exception as e:
+        print(e)
+        return False
+        
 
 def customerGetRestaurants(status_code=200):
     url = f"{BACKEND_API_URL}/customer/restaurants"

@@ -12,7 +12,13 @@ schemaFail = {
 
 
 def get(url, headers, status_code=200, schema={}):
-    response = requests.get(url, headers=headers)
+    try:
+        response = requests.get(url, headers=headers)
+    except requests.exceptions.Timeout as e:
+        raise Exception(f"Request timed out.")
+    except Exception as e:
+        raise Exception(f"Request failed: {e}")
+    
     if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
@@ -34,7 +40,12 @@ def get(url, headers, status_code=200, schema={}):
 
 
 def post(url, headers, data, status_code=200, schema={}):
-    response = requests.post(url, headers=headers, data=data)
+    try:
+        response = requests.post(url, headers=headers, data=data)
+    except requests.exceptions.Timeout as e:
+        raise Exception(f"Request timed out.")
+    except Exception as e:
+        raise Exception(f"Request failed: {e}")
 
     if response.status_code != status_code:
         raise Exception(
@@ -57,7 +68,12 @@ def post(url, headers, data, status_code=200, schema={}):
 
 
 def put(url, headers, data, status_code=200, schema={}):
-    response = requests.put(url, headers=headers, data=data)
+    try:
+        response = requests.put(url, headers=headers, data=data)
+    except requests.exceptions.Timeout as e:
+        raise Exception(f"Request timed out.")
+    except Exception as e:
+        raise Exception(f"Request failed: {e}")
     if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
@@ -79,7 +95,12 @@ def put(url, headers, data, status_code=200, schema={}):
 
 
 def delete(url, headers, status_code=200, schema={}):
-    response = requests.delete(url, headers=headers)
+    try:
+        response = requests.delete(url, headers=headers)
+    except requests.exceptions.Timeout as e:
+        raise Exception(f"Request timed out.")
+    except Exception as e:
+        raise Exception(f"Request failed: {e}")
     if response.status_code != status_code:
         raise Exception(
             f"Expected status code is {status_code} but got {response.status_code}"
