@@ -11,8 +11,8 @@ BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
 token=None
 
-def restaurantLogin(email, password, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/login"
+def deliveryAgentLogin(email, password, status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/login"
     data = {
         "email": email,
         "password": password
@@ -37,16 +37,13 @@ def restaurantLogin(email, password, status_code=200):
     
     return True
 
-def restaurantSignup(name, email, phone, password, address, timings, tags, image, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/signup"
+def deliveryAgentSignup(email, password, name, phone, status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/signup"
     data = {
         "email": email,
         "password": password,
         "name": name,
-        "phone": phone,
-        "address": address,
-        "timings": timings,
-        "tags": tags,
+        "phone": phone
     }
     
     schema = {
@@ -68,30 +65,28 @@ def restaurantSignup(name, email, phone, password, address, timings, tags, image
     
     return True
 
-def restaurantInfo(status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/info"
+def deliveryAgentInfo(status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/info"
     headers = {
-        'Authorization': f"Bearer {token}"
+        "Authorization": f"Bearer {token}"
     }
+
     schema = {
         'type': 'object',
         'properties': {
             'success': {'type': 'boolean'},
-            'restaurant': {
+            'data': {
                 'type': 'object',
                 'properties': {
                     'name': {'type': 'string'},
                     'email': {'type': 'string'},
                     'phone': {'type': 'string'},
-                    'address': {'type': 'string'},
-                    'timings': {'type': 'object'},
-                    'tags': {'type': 'array'},
-                    'image': {'type': 'string'},
+                    'workingStatus': {'type': 'number'},
+                    'location' : {'type': 'object'},
                 },
-                'required': ['name', 'email', 'phone', 'address', 'timings', 'tags', 'image']
+                'required': ['name', 'email', 'phone', 'workingStatus', 'location']
             }
         },
-        'required': ['success', 'restaurant']
     }
 
     try:
@@ -102,38 +97,23 @@ def restaurantInfo(status_code=200):
     
     return True
 
-def restaurantEditInfo(name, phone, address, timings, tags, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/info"
+def deliveryAgentEditInfo(name, phone, status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/info"
     headers = {
         'Authorization': f"Bearer {token}"
     }
 
     data = {
         "name": name,
-        "phone": phone,
-        "address": address,
-        "timings": timings,
-        "tags": tags,
+        "phone": phone
     }
 
     schema = {
         'type': 'object',
         'properties': {
             'success': {'type': 'boolean'},
-            'restaurant': {
-                'type': 'object',
-                'properties': {
-                    'name': {'type': 'string'},
-                    'phone': {'type': 'string'},
-                    'address': {'type': 'string'},
-                    'timings': {'type': 'object'},
-                    'tags': {'type': 'array'},
-                    'image': {'type': 'string'},
-                },
-                'required': []
-            }
         },
-        'required': ['success', 'restaurant']
+        'required': ['success']
     }
 
     try:
@@ -144,13 +124,10 @@ def restaurantEditInfo(name, phone, address, timings, tags, status_code=200):
     
     return True
 
-#IMAGE UPLOAD
-
-def restaurantOrders(status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/orders"
-
+def deliveryAgentOrders(status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/orders"
     headers = {
-        'Authorization': f"Bearer {token}"
+        "Authorization": f"Bearer {token}"
     }
 
     schema = {
@@ -165,11 +142,10 @@ def restaurantOrders(status_code=200):
     
     return True
 
-def restaurantOrderByID(order_id, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/orders/{order_id}"
-
+def deliveryAgentOrderByID(uid, status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/orders/{uid}"
     headers = {
-        'Authorization': f"Bearer {token}"
+        "Authorization": f"Bearer {token}"
     }
 
     schema = {
@@ -194,118 +170,20 @@ def restaurantOrderByID(order_id, status_code=200):
     
     return True
 
-def restaurantMenu(status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/menu"
-
-    headers = {
-        'Authorization': f"Bearer {token}"
-    }
-
-    schema = {
-        'type': 'array'
-    }
-
-    try:
-        response = get(url, headers=headers, status_code=status_code, schema=schema)
-    except Exception as e:
-        print(e)
-        return False
-    
-    return True
-
-def restaurantAddFoodItem(name, price, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/menu"
-
+def deliveryAgentFinishOrder(uid, otp, status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/orders/{uid}"
     headers = {
         'Authorization': f"Bearer {token}"
     }
 
     data = {
-        'name': name,
-        'price': price
+        "otp": otp
     }
 
     schema = {
         'type': 'object',
         'properties': {
-            'success': {'type': 'boolean'}
-        },
-        'required': ['success']
-    }
-
-    try:
-        response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
-    except Exception as e:
-        print(e)
-        return False
-    
-    return True
-
-def restaurantFoodItem(uid, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/menu/{uid}"
-
-    headers = {
-        'Authorization': f"Bearer {token}"
-    }
-
-    schema = {
-        'type': 'object',
-        'properties': {
-            'name': {'type': 'string'},
-            'price': {'type': 'number'},
-            'isAvailable': {'type': 'boolean'}
-        },
-        'required': ['name', 'price', 'isAvailable']
-    }
-
-    try:
-        response = get(url, headers=headers, status_code=status_code, schema=schema)
-    except Exception as e:
-        print(e)
-        return False
-    
-    return True
-
-def restaurantRemoveFoodItem(uid, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/menu/{uid}"
-
-    headers = {
-        'Authorization': f"Bearer {token}"
-    }
-
-    schema = {
-        'type': 'object',
-        'properties': {
-            'success': {'type': 'boolean'}
-        },
-        'required': ['success']
-    }
-
-    try:
-        response = delete(url, headers=headers, status_code=status_code, schema=schema)
-    except Exception as e:
-        print(e)
-        return False
-    
-    return True
-
-def restaurantUpdateFoodItem(uid, name, price, isAvailable, status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/menu/{uid}"
-
-    headers = {
-        'Authorization': f"Bearer {token}"
-    }
-
-    data = {
-        'name': name,
-        'price': price,
-        'isAvailable': isAvailable
-    }
-
-    schema = {
-        'type': 'object',
-        'properties': {
-            'success': {'type': 'boolean'}
+            'success': {'type': 'boolean'},
         },
         'required': ['success']
     }
@@ -318,11 +196,56 @@ def restaurantUpdateFoodItem(uid, name, price, isAvailable, status_code=200):
     
     return True
 
-# FOOD ITEM IMAGE
+def deliveryAgentUpdateLocation(location, status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/location"
+    headers = {
+        'Authorization': f"Bearer {token}"
+    }
+    
+    data = {
+        "location": location
+    }
 
-def restaurantReviews(status_code=200):
-    url = f"{BACKEND_API_URL}/restaurant/reviews"
+    schema = {
+        'type': 'object',
+        'properties': {
+            'success': {'type': 'boolean'},
+        },
+        'required': ['success']
+    }
 
+    try:
+        response = put(url, headers=headers, data=data, status_code=status_code, schema=schema)
+    except Exception as e:
+        print(e)
+        return False
+    
+    return True
+
+def deliveryAgentPauseWorking(status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/working"
+    headers = {
+        'Authorization': f"Bearer {token}"
+    }
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'success': {'type': 'boolean'},
+        },
+        'required': ['success']
+    }
+
+    try:
+        response = put(url, headers=headers, data={}, status_code=status_code, schema=schema)
+    except Exception as e:
+        print(e)
+        return False
+    
+    return True
+
+def deliveryAgentReviews(status_code=200):
+    url = f"{BACKEND_API_URL}/delivery-agent/reviews"
     headers = {
         'Authorization': f"Bearer {token}"
     }
