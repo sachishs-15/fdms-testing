@@ -24,6 +24,7 @@ def customerLogin(email, password, status_code=200):
             'success': {'type': 'boolean'},
             'token': {'type': 'string'}
         },
+        'required': ['success', 'token']
     }
 
     try:
@@ -53,6 +54,7 @@ def customerSignup(email, password, name, phone, address, status_code=200):
             'success': {'type': 'boolean'},
             'token': {'type': 'string'}
         },
+        'required': ['success', 'token']
     }
 
     try:
@@ -81,6 +83,7 @@ def customerInfo(status_code=200):
                 'phone': {'type': 'string'},
                 'address': {'type': 'string'}
         },
+        'required': ['email', 'uid', 'name', 'phone', 'address']
     }
 
     try:
@@ -107,6 +110,7 @@ def customerEditInfo(name, phone, address):
         'properties': {
             'success': {'type': 'boolean'}
         },
+        'required': ['success']
     }
 
     try:
@@ -154,6 +158,7 @@ def customerOrderByID(order_id, status_code=200):
             'isDelivererRated': {'type': 'boolean'},
             'isCompleted' : {'type': 'boolean'}
         },
+        'required': ['uid', 'restaurant', 'items', 'total', 'status', 'delivery_agent', 'isRestaurantRated', 'isDelivererRated', 'isCompleted']
     }
 
     try:
@@ -193,6 +198,7 @@ def customerAddFavouriteRestaurant(restaurant_id, status_code=200):
         'properties': {
             'success': {'type': 'boolean'}
         },
+        'required': ['success']
     }
 
     try:
@@ -214,6 +220,7 @@ def customerRemoveFavouriteRestaurant(restaurant_id, status_code=200):
         'properties': {
             'success': {'type': 'boolean'}
         },
+        'required': ['success']
     }
 
     try:
@@ -259,6 +266,7 @@ def customerGetRestaurantByID(restaurant_id):
             'email' : {'type': 'string'},
             'menu': {'type': 'array'}
         },
+        'required': ['uid', 'name', 'address', 'phone', 'rating', 'isFavourite', 'email', 'menu']
     }
 
 def customerReviewRestaurant(restaurant_id, rating, comment, status_code=200):
@@ -301,6 +309,7 @@ def customerReviewDeliveryAgent(delivery_agent_id, rating, comment, status_code=
         'properties': {
             'success': {'type': 'boolean'}
         },
+        'required': ['success']
     }
 
     try:
@@ -347,11 +356,3 @@ def customergetRecommendations(status_code=200):
     
     return True
 
-
-if __name__ == "__main__":
-    print("Running customer API tests")
-    print("Testing customerLogin")
-    print(customerLogin("Jessy_Crona@yahoo.com", "test123"))
-    print(token)
-    print("Testing customerInfo")
-    print(customerInfo())
