@@ -9,7 +9,7 @@ load_dotenv()
 
 BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
-token=None
+token=""
 
 def managementLogin(email, password, status_code=200):
     url = f"{BACKEND_API_URL}/management/login"

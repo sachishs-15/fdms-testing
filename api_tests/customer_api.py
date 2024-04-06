@@ -11,7 +11,7 @@ load_dotenv()
 
 BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
-token=None
+token=""
 
 def customerLogin(email, password, status_code=200):
     url = f"{BACKEND_API_URL}/customer/login"
@@ -368,9 +368,9 @@ if __name__ == "__main__":
 
     customers = json.load(open(CREATION_DATA_PATH))
     customer = customers[random.randint(0, len(customers)-1)]
-    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Signup test: "):
+    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Customer Signup test: "):
         count += 1
-    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Signup test: "):
+    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Customer Signup test: "):
         count += 1
 
     
