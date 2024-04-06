@@ -125,7 +125,7 @@ def customerEditInfo(name, phone, address):
     
     return True
 
-def customerOrders(status_code=200):
+def customerOrders(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/orders"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -139,11 +139,13 @@ def customerOrders(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerOrderByID(order_id, status_code=200):
+def customerOrderByID(order_id, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/orders/{order_id}"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -166,15 +168,17 @@ def customerOrderByID(order_id, status_code=200):
     }
 
     try:
-        response = get(url, headers=headers, status_code=status_code, schema=schema)
+        response = get(url, headers=headers, status_code=status_code, schema=schema, testMsg="")
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerFavouriteRestaurants(status_code=200):
-    url = f"{BACKEND_API_URL}/customer/favourites"
+def customerFavouriteRestaurants(status_code=200, testMsg=""):
+    url = f"{BACKEND_API_URL}/customer/favouriterestaurants"
     headers = {
         "Authorization": f"Bearer {token}"
     }
@@ -187,12 +191,14 @@ def customerFavouriteRestaurants(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerAddFavouriteRestaurant(restaurant_id, status_code=200):
-    url = f"{BACKEND_API_URL}/customer/favourites/{restaurant_id}"
+def customerAddFavouriteRestaurant(restaurant_id, status_code=200, testMsg=""):
+    url = f"{BACKEND_API_URL}/customer/favouriterestaurant/{restaurant_id}"
     headers = {
         "Authorization": f"Bearer {token}"
     }
@@ -209,12 +215,14 @@ def customerAddFavouriteRestaurant(restaurant_id, status_code=200):
         response = post(url, headers=headers, data={}, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerRemoveFavouriteRestaurant(restaurant_id, status_code=200):
-    url = f"{BACKEND_API_URL}/customer/favourites/{restaurant_id}"
+def customerRemoveFavouriteRestaurant(restaurant_id, status_code=200, testMsg=""):
+    url = f"{BACKEND_API_URL}/customer/favouriterestaurant/{restaurant_id}"
     headers = {
         "Authorization": f"Bearer {token}"
     }
@@ -231,10 +239,14 @@ def customerRemoveFavouriteRestaurant(restaurant_id, status_code=200):
         response = delete(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
+    
+    print(testMsg + "PASSED")
+    return True
         
 
-def customerGetRestaurants(status_code=200):
+def customerGetRestaurants(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/restaurants"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -248,11 +260,13 @@ def customerGetRestaurants(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerGetRestaurantByID(restaurant_id):
+def customerGetRestaurantByID(restaurant_id, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/restaurants/{restaurant_id}"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -273,7 +287,7 @@ def customerGetRestaurantByID(restaurant_id):
         'required': ['uid', 'name', 'address', 'phone', 'rating', 'isFavourite', 'email', 'menu']
     }
 
-def customerReviewRestaurant(restaurant_id, rating, comment, status_code=200):
+def customerReviewRestaurant(restaurant_id, rating, comment, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/reviews/restaurant/{restaurant_id}"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -294,11 +308,13 @@ def customerReviewRestaurant(restaurant_id, rating, comment, status_code=200):
         response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerReviewDeliveryAgent(delivery_agent_id, rating, comment, status_code=200):
+def customerReviewDeliveryAgent(delivery_agent_id, rating, comment, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/reviews/delivery_agent/{delivery_agent_id}"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -320,11 +336,13 @@ def customerReviewDeliveryAgent(delivery_agent_id, rating, comment, status_code=
         response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerGetOffers(status_code=200):
+def customerGetOffers(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/offers"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -338,11 +356,13 @@ def customerGetOffers(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customergetRecommendations(status_code=200):
+def customerGetRecommendations(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/recommendations"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -356,8 +376,10 @@ def customergetRecommendations(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 parent_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -371,6 +393,24 @@ if __name__ == "__main__":
     if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Customer Signup test: "):
         count += 1
     if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Customer Signup test: "):
+        count += 1
+
+    if customerInfo(status_code=200):
+        count += 1
+
+    if customerOrders(status_code=200, testMsg="Customer get Orders: "):
+        count += 1
+
+    if customerGetRestaurants(status_code=200, testMsg="Customer get Restaurants: "):
+        count += 1
+    
+    if customerFavouriteRestaurants(status_code=200, testMsg="Customer get Favourite Restaurants: "):
+        count += 1
+    
+    if customerGetRecommendations(status_code=200, testMsg="Customer get Recommended Restaurants: "):
+        count += 1
+    
+    if customerGetOffers(status_code=200, testMsg="Customer get Offers: "):
         count += 1
 
     

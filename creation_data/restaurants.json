@@ -3,7 +3,7 @@
         "name": "Tasty Bites",
         "email": "tasty.bites@example.com",
         "password": "SecurePass123",
-        "phone": "+15551234567",
+        "phone": "5551234567",
         "address": "Connaught Place, Delhi",
         "timings": {
             "open": 9,
@@ -18,7 +18,7 @@
         "name": "Café del Sol",
         "email": "cafe.del.sol@example.com",
         "password": "StrongPassword456",
-        "phone": "+15557654321",
+        "phone": "5557654321",
         "address": "India Gate, Delhi",
         "timings": {
             "open": 22,
@@ -33,7 +33,7 @@
         "name": "Spice Garden",
         "email": "spice.garden@example.com",
         "password": "SafeP@ssw0rd789",
-        "phone": "+15559876543",
+        "phone": "5559876543",
         "address": "Red Fort, Delhi",
         "timings": {
             "open": 9,

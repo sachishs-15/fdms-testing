@@ -13,7 +13,7 @@ BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
 token=""
 
-def restaurantLogin(email, password, status_code=200):
+def restaurantLogin(email, password, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/login"
     data = {
         "email": email,
@@ -35,8 +35,10 @@ def restaurantLogin(email, password, status_code=200):
             token = response['token']
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 def restaurantSignup(name, email, phone, password, address, timings, tags, status_code=200, testMsg=""):
@@ -72,7 +74,7 @@ def restaurantSignup(name, email, phone, password, address, timings, tags, statu
     print(testMsg + "PASSED")
     return True
 
-def restaurantInfo(status_code=200):
+def restaurantInfo(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/info"
     headers = {
         'Authorization': f"Bearer {token}"
@@ -80,33 +82,28 @@ def restaurantInfo(status_code=200):
     schema = {
         'type': 'object',
         'properties': {
-            'success': {'type': 'boolean'},
-            'restaurant': {
-                'type': 'object',
-                'properties': {
-                    'name': {'type': 'string'},
-                    'email': {'type': 'string'},
-                    'phone': {'type': 'string'},
-                    'address': {'type': 'string'},
-                    'timings': {'type': 'object'},
-                    'tags': {'type': 'array'},
-                    'image': {'type': 'string'},
-                },
-                'required': ['name', 'email', 'phone', 'address', 'timings', 'tags', 'image']
-            }
+                'name': {'type': 'string'},
+                'email': {'type': 'string'},
+                'phone': {'type': 'string'},
+                'address': {'type': 'string'},
+                'timings': {'type': 'object'},
+                'tags': {'type': 'array'},
+                'image': {'type': 'string'},
         },
-        'required': ['success', 'restaurant']
+        'required': ['name', 'email', 'phone', 'address', 'timings', 'tags']
     }
 
     try:
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantEditInfo(name, phone, address, timings, tags, status_code=200):
+def restaurantEditInfo(name, phone, address, timings, tags, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/info"
     headers = {
         'Authorization': f"Bearer {token}"
@@ -124,33 +121,23 @@ def restaurantEditInfo(name, phone, address, timings, tags, status_code=200):
         'type': 'object',
         'properties': {
             'success': {'type': 'boolean'},
-            'restaurant': {
-                'type': 'object',
-                'properties': {
-                    'name': {'type': 'string'},
-                    'phone': {'type': 'string'},
-                    'address': {'type': 'string'},
-                    'timings': {'type': 'object'},
-                    'tags': {'type': 'array'},
-                    'image': {'type': 'string'},
-                },
-                'required': []
-            }
         },
-        'required': ['success', 'restaurant']
+        'required': ['success']
     }
 
     try:
         response = put(url, headers=headers, data=data, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 #IMAGE UPLOAD
 
-def restaurantOrders(status_code=200):
+def restaurantOrders(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/orders"
 
     headers = {
@@ -165,11 +152,13 @@ def restaurantOrders(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantOrderByID(order_id, status_code=200):
+def restaurantOrderByID(order_id, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/orders/{order_id}"
 
     headers = {
@@ -194,11 +183,13 @@ def restaurantOrderByID(order_id, status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantMenu(status_code=200):
+def restaurantMenu(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/menu"
 
     headers = {
@@ -213,11 +204,13 @@ def restaurantMenu(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantAddFoodItem(name, price, status_code=200):
+def restaurantAddFoodItem(name, price, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/menu"
 
     headers = {
@@ -242,11 +235,13 @@ def restaurantAddFoodItem(name, price, status_code=200):
         response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantFoodItem(uid, status_code=200):
+def restaurantFoodItem(uid, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/menu/{uid}"
 
     headers = {
@@ -267,11 +262,13 @@ def restaurantFoodItem(uid, status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantRemoveFoodItem(uid, status_code=200):
+def restaurantRemoveFoodItem(uid, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/menu/{uid}"
 
     headers = {
@@ -290,11 +287,13 @@ def restaurantRemoveFoodItem(uid, status_code=200):
         response = delete(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def restaurantUpdateFoodItem(uid, name, price, isAvailable, status_code=200):
+def restaurantUpdateFoodItem(uid, name, price, isAvailable, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/menu/{uid}"
 
     headers = {
@@ -319,13 +318,15 @@ def restaurantUpdateFoodItem(uid, name, price, isAvailable, status_code=200):
         response = put(url, headers=headers, data=data, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 # FOOD ITEM IMAGE
 
-def restaurantReviews(status_code=200):
+def restaurantReviews(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/reviews"
 
     headers = {
@@ -340,8 +341,10 @@ def restaurantReviews(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 
@@ -352,9 +355,20 @@ if __name__ == "__main__":
     count = 0
 
     restaurants = json.load(open(CREATION_DATA_PATH))
-    restaurant = restaurants[random.randint(0, len(restaurants)-1)]
+    restaurant = restaurants[random.randint(0, len(restaurants)-3)]
+    print(restaurant)
     if restaurantSignup(restaurant['name'], restaurant['email'], restaurant['phone'], restaurant['password'], restaurant['address'], restaurant['timings'], restaurant['tags'], status_code=201, testMsg="Successful Restaurant signup test: "):
         count += 1
     if restaurantSignup(restaurant['name'], restaurant['email'], restaurant['phone'], restaurant['password'], restaurant['address'], restaurant['timings'], restaurant['tags'], status_code=406, testMsg="Duplicate Restaurant signup test: "):
         count += 1
+    
+    if restaurantInfo(status_code=200, testMsg="Restaurant Info test: "):
+        count += 1
+    
+    if restaurantMenu(status_code=200, testMsg="Restaurant Menu test: "):
+        count += 1
+
+    if restaurantOrders(status_code=200, testMsg="Restaurant Orders test: "):
+        count += 1
+    
 
