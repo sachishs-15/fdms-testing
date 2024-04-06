@@ -1,4 +1,5 @@
 import requests
+import json
 from jsonschema import validate
 
 schemaFail = {
@@ -41,6 +42,8 @@ def get(url, headers, status_code=200, schema={}):
 
 def post(url, headers, data, status_code=200, schema={}):
     try:
+        headers["Content-Type"] = "application/json"
+        data = json.dumps(data)
         response = requests.post(url, headers=headers, data=data)
     except requests.exceptions.Timeout as e:
         raise Exception(f"Request timed out.")
@@ -69,6 +72,8 @@ def post(url, headers, data, status_code=200, schema={}):
 
 def put(url, headers, data, status_code=200, schema={}):
     try:
+        headers["Content-Type"] = "application/json"
+        data = json.dumps(data)
         response = requests.put(url, headers=headers, data=data)
     except requests.exceptions.Timeout as e:
         raise Exception(f"Request timed out.")

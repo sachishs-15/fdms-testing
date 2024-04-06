@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Tasty Bites",
+        "email": "tasty.bites@example.com",
+        "password": "SecurePass123",
+        "phone": "5551234567",
+        "address": "Connaught Place, Delhi",
+        "timings": {
+            "open": 9,
+            "close": 11
+        },
+        "tags": [
+            "fast food",
+            "burgers"
+        ]
+    },
+    {
+        "name": "Café del Sol",
+        "email": "cafe.del.sol@example.com",
+        "password": "StrongPassword456",
+        "phone": "5557654321",
+        "address": "India Gate, Delhi",
+        "timings": {
+            "open": 22,
+            "close": 24
+        },
+        "tags": [
+            "coffee",
+            "pastries"
+        ]
+    },
+    {
+        "name": "Spice Garden",
+        "email": "spice.garden@example.com",
+        "password": "SafeP@ssw0rd789",
+        "phone": "5559876543",
+        "address": "Red Fort, Delhi",
+        "timings": {
+            "open": 9,
+            "close": 10
+        },
+        "tags": [
+            "indian cuisine",
+            "spicy food"
+        ]
+    }
+]
