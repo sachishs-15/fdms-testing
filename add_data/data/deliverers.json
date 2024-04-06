@@ -1,0 +1,153 @@
+[
+    {
+      "name": "John Doe",
+      "email": "johndoe1@gmail.com",
+      "uid": "DELABC123XYZ456",
+      "password": "testdel123",
+      "phone": "123-456-7890",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "4"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Jane Smith",
+      "email": "janesmith2@yahoo.com",
+      "uid": "DELBCA789XYZ012",
+      "password": "testdel123",
+      "phone": "987-654-3210",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "5"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Alice Johnson",
+      "email": "alicejohnson3@hotmail.com",
+      "uid": "DELXYZ456ABC789",
+      "password": "testdel123",
+      "phone": "111-222-3333",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "3"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Bob Williams",
+      "email": "bobwilliams4@gmail.com",
+      "uid": "DELXYZ123ABC456",
+      "password": "testdel123",
+      "phone": "444-555-6666",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "4"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Emily Brown",
+      "email": "emilybrown5@yahoo.com",
+      "uid": "DELXYZ789ABC012",
+      "password": "testdel123",
+      "phone": "777-888-9999",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "5"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Michael Davis",
+      "email": "michaeldavis6@hotmail.com",
+      "uid": "DELXYZ456DEF789",
+      "password": "testdel123",
+      "phone": "333-444-5555",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "4"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Sophia Miller",
+      "email": "sophiamiller7@gmail.com",
+      "uid": "DELXYZ789DEF012",
+      "password": "testdel123",
+      "phone": "666-777-8888",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "3"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "William Wilson",
+      "email": "williamwilson8@yahoo.com",
+      "uid": "DELXYZ123GHI456",
+      "password": "testdel123",
+      "phone": "999-888-7777",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "4"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "Olivia Smith",
+      "email": "oliviasmith9@hotmail.com",
+      "uid": "DELXYZ789GHI012",
+      "password": "testdel123",
+      "phone": "111-222-3333",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "5"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    },
+    {
+      "name": "James Johnson",
+      "email": "jamesjohnson10@gmail.com",
+      "uid": "DELXYZ123GHI789",
+      "password": "testdel123",
+      "phone": "444-555-6666",
+      "workingStatus": {"$numberInt": "1"},
+      "location": {
+        "lat": {"$numberDecimal": "28.6129"},
+        "lon": {"$numberDecimal": "77.2295"}
+      },
+      "rating": {"$numberInt": "4"},
+      "reviews": [],
+      "__v": {"$numberInt": "0"}
+    }
+  ]
+  

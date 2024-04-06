@@ -1,0 +1,133 @@
+[
+    {
+      "name": "Alice Johnson",
+      "email": "alice.johnson@gmail.com",
+      "uid": "CUS9kdp9mr2X0",
+      "password": "testcust123",
+      "phone": "+15551234567",
+      "address": {
+        "lat": "28.5244",
+        "lon": "77.1855",
+        "text": "Lotus Temple, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Ethan Brown",
+      "email": "ethan.brown@yahoo.com",
+      "uid": "CUS4ld93kf20L",
+      "password": "testcust123",
+      "phone": "+15559876543",
+      "address": {
+        "lat": "28.6128",
+        "lon": "77.2319",
+        "text": "India Gate, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Julia Martinez",
+      "email": "julia.martinez@hotmail.com",
+      "uid": "CUS5jd93kf11M",
+      "password": "testcust123",
+      "phone": "+15552345678",
+      "address": {
+        "lat": "28.5245",
+        "lon": "77.1855",
+        "text": "Qutub Minar, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Michael Smith",
+      "email": "michael.smith@gmail.com",
+      "uid": "CUS6jdo8lr1V8",
+      "password": "testcust123",
+      "phone": "+15557654321",
+      "address": {
+        "lat": "28.6147",
+        "lon": "77.2012",
+        "text": "Red Fort, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Sophia Wilson",
+      "email": "sophia.wilson@yahoo.com",
+      "uid": "CUS7idp0kr3W9",
+      "password": "testcust123",
+      "phone": "+15558765432",
+      "address": {
+        "lat": "28.5562",
+        "lon": "77.1000",
+        "text": "Humayun's Tomb, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Daniel Johnson",
+      "email": "daniel.johnson@hotmail.com",
+      "uid": "CUS8fdo2lt4X7",
+      "password": "testcust123",
+      "phone": "+15559998877",
+      "address": {
+        "lat": "28.6562",
+        "lon": "77.2410",
+        "text": "Akshardham Temple, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Olivia Brown",
+      "email": "olivia.brown@gmail.com",
+      "uid": "CUS3pdo5js2Z6",
+      "password": "testcust123",
+      "phone": "+15556667788",
+      "address": {
+        "lat": "28.5918",
+        "lon": "77.2508",
+        "text": "Chandni Chowk, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "William Martinez",
+      "email": "william.martinez@yahoo.com",
+      "uid": "CUS2kdo1ph5Y3",
+      "password": "testcust123",
+      "phone": "+15553331122",
+      "address": {
+        "lat": "28.5286",
+        "lon": "77.2062",
+        "text": "Jama Masjid, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Emma Smith",
+      "email": "emma.smith@hotmail.com",
+      "uid": "CUS1pdo9lt0Q8",
+      "password": "testcust123",
+      "phone": "+15554446699",
+      "address": {
+        "lat": "28.6506",
+        "lon": "77.2303",
+        "text": "Lodi Gardens, Delhi"
+      },
+      "favouriteRestaurants": []
+    },
+    {
+      "name": "Liam Wilson",
+      "email": "liam.wilson@gmail.com",
+      "uid": "CUS0kdo3js9Z2",
+      "password": "testcust123",
+      "phone": "+15557778899",
+      "address": {
+        "lat": "28.6139",
+        "lon": "77.2090",
+        "text": "Connaught Place, Delhi"
+      },
+      "favouriteRestaurants": []
+    }
+  ]
+  
