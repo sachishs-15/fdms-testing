@@ -228,9 +228,10 @@ def restaurantAddFoodItem(name, price, status_code=200):
     schema = {
         'type': 'object',
         'properties': {
-            'success': {'type': 'boolean'}
+            'success': {'type': 'boolean'},
+            'uid': {'type': 'string'}
         },
-        'required': ['success']
+        'required': ['success', 'uid']
     }
 
     try:
