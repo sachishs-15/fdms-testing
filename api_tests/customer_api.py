@@ -1,4 +1,6 @@
 import os
+import json
+import random
 from dotenv import load_dotenv
 
 import sys
@@ -38,7 +40,7 @@ def customerLogin(email, password, status_code=200):
     
     return True
 
-def customerSignup(email, password, name, phone, address, status_code=200):
+def customerSignup(email, password, name, phone, address, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/signup"
     data = {
         "email": email,
@@ -64,8 +66,10 @@ def customerSignup(email, password, name, phone, address, status_code=200):
             token = response['token']
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 def customerInfo(status_code=200):
@@ -356,3 +360,17 @@ def customergetRecommendations(status_code=200):
     
     return True
 
+parent_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CREATION_DATA_PATH = os.path.join(parent_directory, 'creation_data', 'customers.json')
+
+if __name__ == "__main__":
+    count = 0
+
+    customers = json.load(open(CREATION_DATA_PATH))
+    customer = customers[random.randint(0, len(customers)-1)]
+    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Signup test: "):
+        count += 1
+    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Signup test: "):
+        count += 1
+
+    

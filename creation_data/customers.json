@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "password": "SecurePass123",
+        "phone": "5551234567",
+        "address": "Qutub Minar, Delhi"
+    },
+    {
+        "name": "Bob Smith",
+        "email": "bob.smith@example.com",
+        "password": "StrongPassword456",
+        "phone": "5557654321",
+        "address": "Qutub Minar, Delhi"
+    },
+    {
+        "name": "Emma Davis",
+        "email": "emma.davis@example.com",
+        "password": "SafeP@ssw0rd789",
+        "phone": "5559876543",
+        "address": "Qutub Minar, Delhi"
+    }
+]

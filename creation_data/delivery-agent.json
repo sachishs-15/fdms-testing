@@ -1,0 +1,20 @@
+[
+    {
+        "name": "David Courier",
+        "phone": "+15551234567",
+        "email": "david.courier@example.com",
+        "password": "DeliveryPass123"
+    },
+    {
+        "name": "Emily Delivery",
+        "phone": "+15557654321",
+        "email": "emily.delivery@example.com",
+        "password": "Express123"
+    },
+    {
+        "name": "James Express",
+        "phone": "+15559876543",
+        "email": "james.express@example.com",
+        "password": "DeliveryAgentPwd456"
+    }
+]
