@@ -1,51 +1,12 @@
 [
     {
-        "name": "Spaghetti Carbonara",
+        "name": "Chicken Curry",
         "image": "",
-        "price": 300,
+        "price": 320,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESK4r1ms"
-    },
-    {
-        "name": "Chicken Alfredo",
-        "image": "",
-        "price": 350,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESDumP5kht"
-    },
-    {
-        "name": "Beef Burger",
-        "image": "",
-        "price": 300,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESDumP5kht"
-    },
-    {
-        "name": "Caesar Salad",
-        "image": "",
-        "price": 200,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESDumP5kht"
-    },
-    {
-        "name": "Margherita Pizza",
-        "image": "",
-        "price": 250,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESDumP5kht"
-    },
-    {
-        "name": "Sushi Roll Set",
-        "image": "",
-        "price": 450,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESDumP5kht"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466510"
     },
     {
         "name": "Fish and Chips",
@@ -53,15 +14,26 @@
         "price": 350,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESDumP5kht"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466511"
     },
     {
-        "name": "Vegetable Stir Fry",
+        "name": "Beef Lasagna",
         "image": "",
-        "price": 280,
+        "price": 400,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESBukh4r4"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466512"
+    },
+    {
+        "name": "Chicken Alfredo",
+        "image": "",
+        "price": 350,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466513"
     },
     {
         "name": "Margherita Pizza",
@@ -69,39 +41,8 @@
         "price": 250,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESBukh4r4"
-    },
-    {
-        "name": "Fish and Chips",
-        "image": "",
-        "price": 350,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESBukh4r4"
-    },
-    {
-        "name": "Beef Lasagna",
-        "image": "",
-        "price": 400,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESBukh4r4"
-    },
-    {
-        "name": "Spaghetti Carbonara",
-        "image": "",
-        "price": 300,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESBukh4r4"
-    },
-    {
-        "name": "Chicken Alfredo",
-        "image": "",
-        "price": 350,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESBukh4r4"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466514"
     },
     {
         "name": "Sushi Roll Set",
@@ -109,31 +50,8 @@
         "price": 450,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESBukh4r4"
-    },
-    {
-        "name": "Beef Lasagna",
-        "image": "",
-        "price": 400,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESF4rziC4f3"
-    },
-    {
-        "name": "Chicken Alfredo",
-        "image": "",
-        "price": 350,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESF4rziC4f3"
-    },
-    {
-        "name": "Vegetable Stir Fry",
-        "image": "",
-        "price": 280,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESF4rziC4f3"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466515"
     },
     {
         "name": "Beef Burger",
@@ -141,15 +59,35 @@
         "price": 300,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESF4rziC4f3"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466516"
     },
     {
-        "name": "Caesar Salad",
+        "name": "Vegetable Stir Fry",
         "image": "",
-        "price": 200,
+        "price": 280,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESF4rziC4f3"
+        "restaurant": "RESL0d1Th3G4rd3n",
+        "uid": "6612cbcd21a5af72c3466517"
+    },
+    {
+        "name": "Spaghetti Carbonara",
+        "image": "",
+        "price": 300,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c3466518"
+    },
+    {
+        "name": "Sushi Roll Set",
+        "image": "",
+        "price": 450,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c3466519"
     },
     {
         "name": "Chicken Curry",
@@ -157,23 +95,8 @@
         "price": 320,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESF4rziC4f3"
-    },
-    {
-        "name": "Spaghetti Carbonara",
-        "image": "",
-        "price": 300,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESF4rziC4f3"
-    },
-    {
-        "name": "Sushi Roll Set",
-        "image": "",
-        "price": 450,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESF4rziC4f3"
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c346651a"
     },
     {
         "name": "Fish and Chips",
@@ -181,31 +104,17 @@
         "price": 350,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESF4rziC4f3"
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c346651b"
     },
     {
-        "name": "Spaghetti Carbonara",
+        "name": "Vegetable Stir Fry",
         "image": "",
-        "price": 300,
+        "price": 280,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
-    },
-    {
-        "name": "Fish and Chips",
-        "image": "",
-        "price": 350,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
-    },
-    {
-        "name": "Beef Burger",
-        "image": "",
-        "price": 300,
-        "isAvailable": true,
-        "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c346651c"
     },
     {
         "name": "Beef Lasagna",
@@ -213,7 +122,8 @@
         "price": 400,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c346651d"
     },
     {
         "name": "Margherita Pizza",
@@ -221,7 +131,35 @@
         "price": 250,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c346651e"
+    },
+    {
+        "name": "Chicken Alfredo",
+        "image": "",
+        "price": 350,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c346651f"
+    },
+    {
+        "name": "Beef Burger",
+        "image": "",
+        "price": 300,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESF4rziC4f3",
+        "uid": "6612cbcd21a5af72c3466520"
+    },
+    {
+        "name": "Beef Burger",
+        "image": "",
+        "price": 300,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESK4r1ms",
+        "uid": "6612cbcd21a5af72c3466521"
     },
     {
         "name": "Caesar Salad",
@@ -229,7 +167,62 @@
         "price": 200,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466522"
+    },
+    {
+        "name": "Beef Burger",
+        "image": "",
+        "price": 300,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466523"
+    },
+    {
+        "name": "Vegetable Stir Fry",
+        "image": "",
+        "price": 280,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466524"
+    },
+    {
+        "name": "Margherita Pizza",
+        "image": "",
+        "price": 250,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466525"
+    },
+    {
+        "name": "Spaghetti Carbonara",
+        "image": "",
+        "price": 300,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466526"
+    },
+    {
+        "name": "Chicken Curry",
+        "image": "",
+        "price": 320,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466527"
+    },
+    {
+        "name": "Chicken Alfredo",
+        "image": "",
+        "price": 350,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466528"
     },
     {
         "name": "Sushi Roll Set",
@@ -237,6 +230,61 @@
         "price": 450,
         "isAvailable": true,
         "__v": 0,
-        "restaurant": "RESSmok3H0us3D3li"
+        "restaurant": "RESPunj4bGr1ll",
+        "uid": "6612cbcd21a5af72c3466529"
+    },
+    {
+        "name": "Chicken Curry",
+        "image": "",
+        "price": 320,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESTh3Sp1c3R0ut3",
+        "uid": "6612cbcd21a5af72c346652a"
+    },
+    {
+        "name": "Beef Burger",
+        "image": "",
+        "price": 300,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESTh3Sp1c3R0ut3",
+        "uid": "6612cbcd21a5af72c346652b"
+    },
+    {
+        "name": "Chicken Alfredo",
+        "image": "",
+        "price": 350,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESTh3Sp1c3R0ut3",
+        "uid": "6612cbcd21a5af72c346652c"
+    },
+    {
+        "name": "Fish and Chips",
+        "image": "",
+        "price": 350,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESTh3Sp1c3R0ut3",
+        "uid": "6612cbcd21a5af72c346652d"
+    },
+    {
+        "name": "Vegetable Stir Fry",
+        "image": "",
+        "price": 280,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESTh3Sp1c3R0ut3",
+        "uid": "6612cbcd21a5af72c346652e"
+    },
+    {
+        "name": "Beef Lasagna",
+        "image": "",
+        "price": 400,
+        "isAvailable": true,
+        "__v": 0,
+        "restaurant": "RESTh3Sp1c3R0ut3",
+        "uid": "6612cbcd21a5af72c346652f"
     }
 ]

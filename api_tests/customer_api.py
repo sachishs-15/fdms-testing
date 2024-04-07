@@ -14,7 +14,7 @@ BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 token=""
 testOrderID = ""
 
-def customerLogin(email, password, status_code=200):
+def customerLogin(email, password, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/login"
     data = {
         "email": email,
@@ -37,8 +37,10 @@ def customerLogin(email, password, status_code=200):
             token = response['token']
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 def customerSignup(email, password, name, phone, address, status_code=200, testMsg=""):
@@ -73,7 +75,7 @@ def customerSignup(email, password, name, phone, address, status_code=200, testM
     print(testMsg + "PASSED")
     return True
 
-def customerInfo(status_code=200):
+def customerInfo(status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/info"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -95,11 +97,13 @@ def customerInfo(status_code=200):
         response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
-def customerEditInfo(name, phone, address):
+def customerEditInfo(name, phone, address, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/edit"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -122,8 +126,10 @@ def customerEditInfo(name, phone, address):
         response = put(url, headers=headers, data=data, status_code=200, schema=schema)
     except Exception as e:
         print(e)
+        print(testMsg + "FAILED")
         return False
     
+    print(testMsg + "PASSED")
     return True
 
 def customerOrders(status_code=200, testMsg=""):
@@ -147,7 +153,7 @@ def customerOrders(status_code=200, testMsg=""):
     return True
 
 def customerOrderByID(order_id, status_code=200, testMsg=""):
-    url = f"{BACKEND_API_URL}/customer/orders/{order_id}"
+    url = f"{BACKEND_API_URL}/customer/order/{order_id}"
     headers = {
         "Authorization": f"Bearer {token}"
     }
@@ -160,16 +166,16 @@ def customerOrderByID(order_id, status_code=200, testMsg=""):
             'items': {'type': 'array'},
             'total': {'type': 'number'},
             'status': {'type': 'string'},
-            'delivery_agent': {'type': 'object'},
+            'deliverer': {'type': 'object'},
             'isRestaurantRated': {'type': 'boolean'},
             'isDelivererRated': {'type': 'boolean'},
             'isCompleted' : {'type': 'boolean'}
         },
-        'required': ['uid', 'restaurant', 'items', 'total', 'status', 'delivery_agent', 'isRestaurantRated', 'isDelivererRated', 'isCompleted']
+        'required': ['uid', 'restaurant', 'items', 'total', 'deliverer', 'isRestaurantRated', 'isDelivererRated', 'isCompleted']
     }
 
     try:
-        response = get(url, headers=headers, status_code=status_code, schema=schema, testMsg="")
+        response = get(url, headers=headers, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
         print(testMsg + "FAILED")
@@ -178,7 +184,8 @@ def customerOrderByID(order_id, status_code=200, testMsg=""):
     print(testMsg + "PASSED")
     return True
 
-def customerNewOrder(restaurant_id, items, status_code=200, testMsg=""):
+def customerNewOrder(restaurant_id, items, deliveryAddress, status_code=200, testMsg=""):
+    print("New Order", restaurant_id, deliveryAddress)
     url = f"{BACKEND_API_URL}/customer/order"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -186,7 +193,8 @@ def customerNewOrder(restaurant_id, items, status_code=200, testMsg=""):
 
     data = {
         "restaurant": restaurant_id,
-        "items": items
+        "items": items,
+        "deliveryAddress": deliveryAddress
     }
 
     schema = {
@@ -195,8 +203,9 @@ def customerNewOrder(restaurant_id, items, status_code=200, testMsg=""):
 
     try:
         response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
-        global testOrderID
-        testOrderID = response['uid']
+        if(status_code == 200):
+            global testOrderID
+            testOrderID = response['uid']
     except Exception as e:
         print(e)
         print(testMsg + "FAILED")
@@ -413,15 +422,16 @@ def customerGetRecommendations(status_code=200, testMsg=""):
 parent_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CREATION_DATA_PATH = os.path.join(parent_directory, 'creation_data', 'customers.json')
 
-TEST_DATA_PATH = os.path.join(parent_directory, 'add_data', 'customers.json')
-RESTAURANT_DATA_PATH = os.path.join(parent_directory, 'add_data', 'restaurants.json')
-DISHES_DATA_PATH = os.path.join(parent_directory, 'add_data', 'store_dishes.json')
+TEST_DATA_PATH = os.path.join(parent_directory, 'add_data', 'test_data', 'customers.json')
+RESTAURANT_DATA_PATH = os.path.join(parent_directory, 'add_data', 'test_data', 'restaurants.json')
+DISHES_DATA_PATH = os.path.join(parent_directory, 'add_data', 'test_data', 'dishes.json')
 
 if __name__ == "__main__":
     count = 0
 
     customers = json.load(open(CREATION_DATA_PATH))
     customer = customers[random.randint(0, len(customers)-1)]
+    print("SignUp", customer)
     if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Customer Signup: "):
         count += 1
     if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Customer Signup: "):
@@ -429,7 +439,7 @@ if __name__ == "__main__":
 
     customers = json.load(open(TEST_DATA_PATH))
     customer = customers[random.randint(0, len(customers)-1)]
-
+    print("Login", customer)
     if customerLogin(customer['email'], customer['password'], status_code=200, testMsg="Successful Customer Login: "):
         count += 1
     if customerLogin(customer['email'], "wrongpassword", status_code=400, testMsg="Incorrect Customer Login: "):
@@ -449,9 +459,9 @@ if __name__ == "__main__":
                 "quantity": random.randint(1, 5)
             })
 
-    if customerNewOrder(restaurant['uid'], itemList, status_code=200, testMsg="Customer New Order: "):
+    if customerNewOrder(restaurant['uid'], itemList, customer["address"]["text"], status_code=200, testMsg="Customer New Order: "):
         count += 1
-    if customerNewOrder("wrongid", itemList, status_code=406, testMsg="Customer Incorrect New Order: "):
+    if customerNewOrder("wrongid", itemList, customer["address"]["text"], status_code=406, testMsg="Customer Incorrect New Order: "):
         count += 1
 
     if customerOrders(status_code=200, testMsg="Customer get Orders: "):
@@ -470,6 +480,12 @@ if __name__ == "__main__":
         count += 1
     
     if customerFavouriteRestaurants(status_code=200, testMsg="Customer get Favourite Restaurants: "):
+        count += 1
+
+    if customerAddFavouriteRestaurant(restaurant['uid'], status_code=200, testMsg="Customer Add Favourite Restaurant: "):
+        count += 1
+    
+    if customerRemoveFavouriteRestaurant(restaurant['uid'], status_code=200, testMsg="Customer Remove Favourite Restaurant: "):
         count += 1
     
     if customerGetRecommendations(status_code=200, testMsg="Customer get Recommended Restaurants: "):

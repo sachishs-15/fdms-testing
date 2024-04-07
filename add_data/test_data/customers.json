@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Olivia Brown",
+        "email": "olivia.brown@gmail.com",
+        "uid": "CUS3pdo5js2Z6",
+        "password": "testcust123",
+        "phone": "7890123456",
+        "address": {
+            "lat": "28.5918",
+            "lon": "77.2508",
+            "text": "Chandni Chowk, Delhi"
+        },
+        "favouriteRestaurants": [],
+        "__v": 0
+    },
+    {
+        "name": "Ethan Brown",
+        "email": "ethan.brown@yahoo.com",
+        "uid": "CUS4ld93kf20L",
+        "password": "testcust123",
+        "phone": "2345678901",
+        "address": {
+            "lat": "28.6128",
+            "lon": "77.2319",
+            "text": "India Gate, Delhi"
+        },
+        "favouriteRestaurants": [],
+        "__v": 0
+    },
+    {
+        "name": "Emma Smith",
+        "email": "emma.smith@hotmail.com",
+        "uid": "CUS1pdo9lt0Q8",
+        "password": "testcust123",
+        "phone": "9012345678",
+        "address": {
+            "lat": "28.6506",
+            "lon": "77.2303",
+            "text": "Lodi Gardens, Delhi"
+        },
+        "favouriteRestaurants": [],
+        "__v": 0
+    },
+    {
+        "name": "Michael Smith",
+        "email": "michael.smith@gmail.com",
+        "uid": "CUS6jdo8lr1V8",
+        "password": "testcust123",
+        "phone": "4567890123",
+        "address": {
+            "lat": "28.6147",
+            "lon": "77.2012",
+            "text": "Red Fort, Delhi"
+        },
+        "favouriteRestaurants": [],
+        "__v": 0
+    },
+    {
+        "name": "Sophia Wilson",
+        "email": "sophia.wilson@yahoo.com",
+        "uid": "CUS7idp0kr3W9",
+        "password": "testcust123",
+        "phone": "5678901234",
+        "address": {
+            "lat": "28.5562",
+            "lon": "77.1000",
+            "text": "Humayun's Tomb, Delhi"
+        },
+        "favouriteRestaurants": [],
+        "__v": 0
+    }
+]

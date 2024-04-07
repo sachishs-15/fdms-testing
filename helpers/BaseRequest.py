@@ -25,7 +25,7 @@ def get(url, headers, status_code=200, schema={}):
             f"Expected status code is {status_code} but got {response.status_code}"
         )
 
-    if response.status_code > 400:
+    if response.status_code >= 400:
         try:
             validate(instance=response.json(), schema=schemaFail)
         except Exception as e:
@@ -55,7 +55,7 @@ def post(url, headers, data, status_code=200, schema={}):
             f"Expected status code is {status_code} but got {response.status_code}"
         )
 
-    if response.status_code > 400:
+    if response.status_code >= 400:
         try:
             validate(instance=response.json(), schema=schemaFail)
         except Exception as e:
@@ -84,7 +84,7 @@ def put(url, headers, data, status_code=200, schema={}):
             f"Expected status code is {status_code} but got {response.status_code}"
         )
 
-    if response.status_code > 400:
+    if response.status_code >= 400:
         try:
             validate(instance=response.json(), schema=schemaFail)
         except Exception as e:
@@ -111,7 +111,7 @@ def delete(url, headers, status_code=200, schema={}):
             f"Expected status code is {status_code} but got {response.status_code}"
         )
 
-    if response.status_code > 400:
+    if response.status_code >= 400:
         try:
             validate(instance=response.json(), schema=schemaFail)
         except Exception as e:
