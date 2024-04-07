@@ -1,113 +1,72 @@
 [
-    {
-      "name": "Spaghetti Carbonara",
-      "image": "",
-      "price": {
-        "$numberInt": "300"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Chicken Alfredo",
-      "image": "",
-      "price": {
-        "$numberInt": "350"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Margherita Pizza",
-      "image": "",
-      "price": {
-        "$numberInt": "250"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Caesar Salad",
-      "image": "",
-      "price": {
-        "$numberInt": "200"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Beef Lasagna",
-      "image": "",
-      "price": {
-        "$numberInt": "400"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Sushi Roll Set",
-      "image": "",
-      "price": {
-        "$numberInt": "450"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Fish and Chips",
-      "image": "",
-      "price": {
-        "$numberInt": "350"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Beef Burger",
-      "image": "",
-      "price": {
-        "$numberInt": "300"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Chicken Curry",
-      "image": "",
-      "price": {
-        "$numberInt": "320"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Vegetable Stir Fry",
-      "image": "",
-      "price": {
-        "$numberInt": "280"
-      },
-      "isAvailable": true,
-      "__v": {
-        "$numberInt": "0"
-      }
-    }
-  ]
-  
+  {
+    "name": "Spaghetti Carbonara",
+    "image": "",
+    "price": 300,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Chicken Alfredo",
+    "image": "",
+    "price": 350,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Margherita Pizza",
+    "image": "",
+    "price": 250,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Caesar Salad",
+    "image": "",
+    "price": 200,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Beef Lasagna",
+    "image": "",
+    "price": 400,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Sushi Roll Set",
+    "image": "",
+    "price": 450,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Fish and Chips",
+    "image": "",
+    "price": 350,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Beef Burger",
+    "image": "",
+    "price": 300,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Chicken Curry",
+    "image": "",
+    "price": 320,
+    "isAvailable": true,
+    "__v": 0
+  },
+  {
+    "name": "Vegetable Stir Fry",
+    "image": "",
+    "price": 280,
+    "isAvailable": true,
+    "__v": 0
+  }
+]

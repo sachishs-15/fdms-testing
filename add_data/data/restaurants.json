@@ -4,428 +4,274 @@
         "email": "indianaccent@example.com",
         "uid": "RESInd1Acc3nt",
         "password": "testrest123",
-        "phone": "011-6617-5151",
+        "phone": "01166175151",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.5964"
-            },
-            "lon": {
-                "$numberDecimal": "77.2224"
-            },
+            "lat": 28.5964,
+            "lon": 77.2224,
             "text": "The Lodhi, Lodhi Road, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.5"
-        },
+        "rating": 4.5,
         "tags": [
             "Modern Indian",
             "Fine Dining"
         ],
-        "dishCount": {
-            "$numberInt": "8"
-        },
+        "dishCount": 8,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Bukhara",
         "email": "bukhara@example.com",
         "uid": "RESBukh4r4",
         "password": "testrest123",
-        "phone": "011-6651-3666",
+        "phone": "01166513666",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.6129"
-            },
-            "lon": {
-                "$numberDecimal": "77.2295"
-            },
+            "lat": 28.6129,
+            "lon": 77.2295,
             "text": "ITC Maurya, Sardar Patel Marg, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.8"
-        },
+        "rating": 4.8,
         "tags": [
             "North Indian",
             "Fine Dining"
         ],
-        "dishCount": {
-            "$numberInt": "7"
-        },
+        "dishCount": 7,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Dum Pukht",
         "email": "dumpukht@example.com",
         "uid": "RESDumP5kht",
         "password": "testrest123",
-        "phone": "011-4366-6666",
+        "phone": "01143666666",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.5726"
-            },
-            "lon": {
-                "$numberDecimal": "77.2426"
-            },
+            "lat": 28.5726,
+            "lon": 77.2426,
             "text": "ITC Maurya, Diplomatic Enclave, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.7"
-        },
+        "rating": 4.7,
         "tags": [
             "Awadhi",
             "Fine Dining"
         ],
-        "dishCount": {
-            "$numberInt": "6"
-        },
+        "dishCount": 6,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Farzi Cafe",
         "email": "farzicafe@example.com",
         "uid": "RESF4rziC4f3",
         "password": "testrest123",
-        "phone": "011-4355-5555",
+        "phone": "01143555555",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.6325"
-            },
-            "lon": {
-                "$numberDecimal": "77.2167"
-            },
+            "lat": 28.6325,
+            "lon": 77.2167,
             "text": "Connaught Place, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "24"
-            }
+            "open": 12,
+            "close": 24
         },
-        "rating": {
-            "$numberInt": "4.6"
-        },
+        "rating": 4.6,
         "tags": [
             "Modern Indian",
             "Casual Dining"
         ],
-        "dishCount": {
-            "$numberInt": "9"
-        },
+        "dishCount": 9,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Karim's",
         "email": "karims@example.com",
         "uid": "RESK4r1ms",
         "password": "testrest123",
-        "phone": "011-2326-9880",
+        "phone": "01123269880",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.6496"
-            },
-            "lon": {
-                "$numberDecimal": "77.2323"
-            },
+            "lat": 28.6496,
+            "lon": 77.2323,
             "text": "Jama Masjid, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.4"
-        },
+        "rating": 4.4,
         "tags": [
             "Mughlai",
             "Casual Dining"
         ],
-        "dishCount": {
-            "$numberInt": "1"
-        },
+        "dishCount": 1,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Punjab Grill",
         "email": "punjabgrill@example.com",
         "uid": "RESPunj4bGr1ll",
         "password": "testrest123",
-        "phone": "011-4351-6666",
+        "phone": "01143516666",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.5699"
-            },
-            "lon": {
-                "$numberDecimal": "77.2266"
-            },
+            "lat": 28.5699,
+            "lon": 77.2266,
             "text": "Connaught Place, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.3"
-        },
+        "rating": 4.3,
         "tags": [
             "Punjabi",
             "Fine Dining"
         ],
-        "dishCount": {
-            "$numberInt": "8"
-        },
+        "dishCount": 8,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Smoke House Deli",
         "email": "smokehousedeli@example.com",
         "uid": "RESSmok3H0us3D3li",
         "password": "testrest123",
-        "phone": "011-4087-1500",
+        "phone": "01140871500",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.5801"
-            },
-            "lon": {
-                "$numberDecimal": "77.2260"
-            },
+            "lat": 28.5801,
+            "lon": 77.226,
             "text": "Khan Market, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "10"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 10,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.2"
-        },
+        "rating": 4.2,
         "tags": [
             "Café",
             "Casual Dining"
         ],
-        "dishCount": {
-            "$numberInt": "7"
-        },
+        "dishCount": 7,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "The Spice Route",
         "email": "thespiceroute@example.com",
         "uid": "RESTh3Sp1c3R0ut3",
         "password": "testrest123",
-        "phone": "011-6676-5134",
+        "phone": "01166765134",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.5953"
-            },
-            "lon": {
-                "$numberDecimal": "77.1745"
-            },
+            "lat": 28.5953,
+            "lon": 77.1745,
             "text": "The Imperial, Janpath, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.5"
-        },
+        "rating": 4.5,
         "tags": [
             "South-East Asian",
             "Fine Dining"
         ],
-        "dishCount": {
-            "$numberInt": "6"
-        },
+        "dishCount": 6,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Gulati",
         "email": "gulati@example.com",
         "uid": "RESGul4t1",
         "password": "testrest123",
-        "phone": "011-2334-5464",
+        "phone": "01123345464",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.6348"
-            },
-            "lon": {
-                "$numberDecimal": "77.2207"
-            },
+            "lat": 28.6348,
+            "lon": 77.2207,
             "text": "Pandara Road Market, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "23"
-            }
+            "open": 12,
+            "close": 23
         },
-        "rating": {
-            "$numberInt": "4.1"
-        },
+        "rating": 4.1,
         "tags": [
             "North Indian",
             "Casual Dining"
         ],
-        "dishCount": {
-            "$numberInt": "5"
-        },
+        "dishCount": 5,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Andhra Bhavan",
         "email": "andhrabhavan@example.com",
         "uid": "RESAndhr4Bh4v4n",
         "password": "testrest123",
-        "phone": "011-2338-2038",
+        "phone": "01123382038",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.6245"
-            },
-            "lon": {
-                "$numberDecimal": "77.2000"
-            },
+            "lat": 28.6245,
+            "lon": 77.2,
             "text": "Ashoka Road, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "8"
-            },
-            "close": {
-                "$numberInt": "22"
-            }
+            "open": 8,
+            "close": 22
         },
-        "rating": {
-            "$numberInt": "4.0"
-        },
+        "rating": 4.0,
         "tags": [
             "South Indian",
             "Casual Dining"
         ],
-        "dishCount": {
-            "$numberInt": "7"
-        },
+        "dishCount": 7,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     },
     {
         "name": "Lodi - The Garden Restaurant",
         "email": "lodi@example.com",
         "uid": "RESL0d1Th3G4rd3n",
         "password": "testrest123",
-        "phone": "011-3310-6666",
+        "phone": "01133106666",
         "image": "",
         "address": {
-            "lat": {
-                "$numberDecimal": "28.5909"
-            },
-            "lon": {
-                "$numberDecimal": "77.2263"
-            },
+            "lat": 28.5909,
+            "lon": 77.2263,
             "text": "Lodhi Road, New Delhi"
         },
         "timings": {
-            "open": {
-                "$numberInt": "12"
-            },
-            "close": {
-                "$numberInt": "24"
-            }
+            "open": 12,
+            "close": 24
         },
-        "rating": {
-            "$numberInt": "4.2"
-        },
+        "rating": 4.2,
         "tags": [
             "Continental",
             "Casual Dining"
         ],
-        "dishCount": {
-            "$numberInt": "8"
-        },
+        "dishCount": 8,
         "reviews": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     }
 ]

@@ -1,10 +1,18 @@
 import pymongo
 from pymongo import MongoClient
+from bson.objectid import ObjectId
+import bcrypt
 import json
 import os
 from dotenv import load_dotenv
 load_dotenv()
 import random
+
+
+def handlePassword(password):
+    salt = bcrypt.gensalt(10)
+    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed.decode('utf-8')
 
 
 client = MongoClient(os.getenv('MONGOURI'))
@@ -16,6 +24,8 @@ collection = db['restaurants']
 with open('data/restaurants.json') as f:
     restaurants = json.load(f)
     restaurants = random.sample(restaurants, 5)
+    for restaurant in restaurants:
+        restaurant["password"] = handlePassword(restaurant["password"])
     collection.insert_many(restaurants)
 
 print("Restaurant Data inserted successfully!")
@@ -28,26 +38,20 @@ db['dishes'].drop()
 
 
 for restaurant in restaurants:
-   # print(restaurant['uid'])
-    dishCount = int(restaurant["dishCount"]['$numberInt'])
+    dishCount = int(restaurant["dishCount"])
     rt = db['restaurants'].find({"uid": f"{restaurant['uid']}"})
-   # print(rt[0])
     rt = rt[0]
     restid = f"{rt.get('_id')}"
-    #print(restid)
-
-    #print(dishCount)
+    
     dishes_sample = random.sample(dishes, dishCount)
-    #print(dishes_sample)
 
     dishes_sample_copy = dishes_sample.copy()
 
     for dish in dishes_sample_copy:
         dish_cpy = dish.copy()
         dish_cpy["restaurant"] = {}
-        dish_cpy["restaurant"]["$oid"] = restid
+        dish_cpy["restaurant"] = ObjectId(restid)
         added_dishes.append(dish_cpy)
-        #db['dishes'].insert_one(dish)
 
 #print(added_dishes)
 # added_dishes = json.dumps(added_dishes)
@@ -61,6 +65,8 @@ with open('data/deliverers.json') as f:
     deliverers = json.load(f)
     ndeliverers = 5
     deliverers = random.sample(deliverers, ndeliverers)
+    for deliverer in deliverers:
+        deliverer["password"] = handlePassword(deliverer["password"])
     collection = db['deliverers']
     collection.drop()
     collection.insert_many(deliverers)
@@ -72,6 +78,8 @@ with open('data/customers.json') as f:
     customers = json.load(f)
     ncustomers = 5
     customers = random.sample(customers, ncustomers)
+    for customer in customers:
+        customer["password"] = handlePassword(customer["password"])
     collection = db['customers']
     collection.drop()
     collection.insert_many(customers)
@@ -82,7 +90,9 @@ with open('data/management.json') as f:
     management = json.load(f)
     nmanagement = 5
     management = random.sample(management, nmanagement)
-    collection = db['management']
+    for manage in management:
+        manage["password"] = handlePassword(manage["password"])
+    collection = db['managements']
     collection.drop()
     collection.insert_many(management)
 

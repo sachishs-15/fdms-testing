@@ -1,103 +1,82 @@
 [
-    {
-      "name": "John Doe",
-      "email": "johndoe@gmail.com",
-      "uid": "MAN001xyz456",
-      "password": "testman123",
-      "phone": "123-456-7890",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Jane Smith",
-      "email": "janesmith@yahoo.com",
-      "uid": "MAN002abc789",
-      "password": "testman123",
-      "phone": "234-567-8901",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Robert Johnson",
-      "email": "robertjohnson@hotmail.com",
-      "uid": "MAN003def012",
-      "password": "testman123",
-      "phone": "345-678-9012",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Emily Davis",
-      "email": "emilydavis@gmail.com",
-      "uid": "MAN004ghi345",
-      "password": "testman123",
-      "phone": "456-789-0123",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Michael Wilson",
-      "email": "michaelwilson@yahoo.com",
-      "uid": "MAN005jkl678",
-      "password": "testman123",
-      "phone": "567-890-1234",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Sarah Taylor",
-      "email": "sarahtaylor@hotmail.com",
-      "uid": "MAN006mno901",
-      "password": "testman123",
-      "phone": "678-901-2345",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "William Brown",
-      "email": "williambrown@gmail.com",
-      "uid": "MAN007pqr234",
-      "password": "testman123",
-      "phone": "789-012-3456",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Amanda Jones",
-      "email": "amandajones@yahoo.com",
-      "uid": "MAN008stu567",
-      "password": "testman123",
-      "phone": "890-123-4567",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "David Garcia",
-      "email": "davidgarcia@hotmail.com",
-      "uid": "MAN009vwx890",
-      "password": "testman123",
-      "phone": "901-234-5678",
-      "__v": {
-        "$numberInt": "0"
-      }
-    },
-    {
-      "name": "Jennifer Miller",
-      "email": "jennifermiller@gmail.com",
-      "uid": "MAN010yzab012",
-      "password": "testman123",
-      "phone": "012-345-6789",
-      "__v": {
-        "$numberInt": "0"
-      }
-    }
-  ]
-  
+  {
+    "name": "John Doe",
+    "email": "johndoe@gmail.com",
+    "uid": "MAN001xyz456",
+    "password": "testman123",
+    "phone": "1234567890",
+    "__v": 0
+  },
+  {
+    "name": "Jane Smith",
+    "email": "janesmith@yahoo.com",
+    "uid": "MAN002abc789",
+    "password": "testman123",
+    "phone": "2345678901",
+    "__v": 0
+  },
+  {
+    "name": "Robert Johnson",
+    "email": "robertjohnson@hotmail.com",
+    "uid": "MAN003def012",
+    "password": "testman123",
+    "phone": "3456789012",
+    "__v": 0
+  },
+  {
+    "name": "Emily Davis",
+    "email": "emilydavis@gmail.com",
+    "uid": "MAN004ghi345",
+    "password": "testman123",
+    "phone": "4567890123",
+    "__v": 0
+  },
+  {
+    "name": "Michael Wilson",
+    "email": "michaelwilson@yahoo.com",
+    "uid": "MAN005jkl678",
+    "password": "testman123",
+    "phone": "5678901234",
+    "__v": 0
+  },
+  {
+    "name": "Sarah Taylor",
+    "email": "sarahtaylor@hotmail.com",
+    "uid": "MAN006mno901",
+    "password": "testman123",
+    "phone": "6789012345",
+    "__v": 0
+  },
+  {
+    "name": "William Brown",
+    "email": "williambrown@gmail.com",
+    "uid": "MAN007pqr234",
+    "password": "testman123",
+    "phone": "7890123456",
+    "__v": 0
+  },
+  {
+    "name": "Amanda Jones",
+    "email": "amandajones@yahoo.com",
+    "uid": "MAN008stu567",
+    "password": "testman123",
+    "phone": "8901234567",
+    "__v": 0
+  },
+  {
+    "name": "David Garcia",
+    "email": "davidgarcia@hotmail.com",
+    "uid": "MAN009vwx890",
+    "password": "testman123",
+    "phone": "9012345678",
+    "__v": 0
+  },
+  {
+    "name": "Jennifer Miller",
+    "email": "jennifermiller@gmail.com",
+    "uid": "MAN010yzab012",
+    "password": "testman123",
+    "phone": "0123456789",
+    "__v": 0
+  }
+]

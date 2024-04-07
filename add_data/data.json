@@ -5,8 +5,7 @@
         "uid": "CUSb2yMKmTb6B",
         "password": "$2b$10$Cz4Df8RE5xK3v9oGhA2Lm9Nh8Yd2FrluDUTMmC2X.8h5N4OaE7ftG",
         "phone": "921-748-5032",
-        "address":
-        {
+        "address": {
             "lat": {
                 "$numberDecimal": "23.45789"
             },
@@ -16,8 +15,6 @@
             "text": "IIT Bombay"
         },
         "favouriteRestaurants": [],
-        "__v": {
-            "$numberInt": "0"
-        }
+        "__v": 0
     }
 ]
