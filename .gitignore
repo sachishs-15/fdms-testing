@@ -1,3 +1,4 @@
 .env
 /venv
 *.pyc
+/add_data/test_data

@@ -494,4 +494,8 @@ if __name__ == "__main__":
     if customerGetOffers(status_code=200, testMsg="Customer get Offers: "):
         count += 1
 
+    if customerReviewRestaurant(restaurant['uid'], 5, "Good Food", status_code=200, testMsg="Customer Review Restaurant: "):
+        count += 1
+    
+
     
