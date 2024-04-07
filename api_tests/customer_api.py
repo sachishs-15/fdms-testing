@@ -13,6 +13,7 @@ BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
 token=""
 testOrderID = ""
+delivererID = ""
 
 def customerLogin(email, password, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/customer/login"
@@ -185,7 +186,6 @@ def customerOrderByID(order_id, status_code=200, testMsg=""):
     return True
 
 def customerNewOrder(restaurant_id, items, deliveryAddress, status_code=200, testMsg=""):
-    print("New Order", restaurant_id, deliveryAddress)
     url = f"{BACKEND_API_URL}/customer/order"
     headers = {
         "Authorization": f"Bearer {token}"
@@ -206,6 +206,8 @@ def customerNewOrder(restaurant_id, items, deliveryAddress, status_code=200, tes
         if(status_code == 200):
             global testOrderID
             testOrderID = response['uid']
+            global delivererID
+            delivererID = response['deliverer']['uid']
     except Exception as e:
         print(e)
         print(testMsg + "FAILED")
@@ -325,13 +327,14 @@ def customerGetRestaurantByID(restaurant_id, status_code=200, testMsg=""):
     }
 
 def customerReviewRestaurant(restaurant_id, rating, comment, status_code=200, testMsg=""):
-    url = f"{BACKEND_API_URL}/reviews/restaurant/{restaurant_id}"
+    url = f"{BACKEND_API_URL}/customer/reviews/restaurant/{restaurant_id}"
     headers = {
         "Authorization": f"Bearer {token}"
     }
     data = {
         "rating": rating,
-        "comment": comment
+        "comment": comment,
+        "order": testOrderID
     }
     
     schema = {
@@ -352,13 +355,14 @@ def customerReviewRestaurant(restaurant_id, rating, comment, status_code=200, te
     return True
 
 def customerReviewDeliveryAgent(delivery_agent_id, rating, comment, status_code=200, testMsg=""):
-    url = f"{BACKEND_API_URL}/reviews/delivery_agent/{delivery_agent_id}"
+    url = f"{BACKEND_API_URL}/customer/reviews/deliverer/{delivery_agent_id}"
     headers = {
         "Authorization": f"Bearer {token}"
     }
     data = {
         "rating": rating,
-        "comment": comment
+        "comment": comment,
+        "order": testOrderID
     }
     
     schema = {
@@ -431,7 +435,6 @@ if __name__ == "__main__":
 
     customers = json.load(open(CREATION_DATA_PATH))
     customer = customers[random.randint(0, len(customers)-1)]
-    print("SignUp", customer)
     if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Customer Signup: "):
         count += 1
     if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Customer Signup: "):
@@ -439,7 +442,6 @@ if __name__ == "__main__":
 
     customers = json.load(open(TEST_DATA_PATH))
     customer = customers[random.randint(0, len(customers)-1)]
-    print("Login", customer)
     if customerLogin(customer['email'], customer['password'], status_code=200, testMsg="Successful Customer Login: "):
         count += 1
     if customerLogin(customer['email'], "wrongpassword", status_code=400, testMsg="Incorrect Customer Login: "):
@@ -473,7 +475,6 @@ if __name__ == "__main__":
     if customerGetRestaurants(status_code=200, testMsg="Customer get Restaurants: "):
         count += 1
 
-    restaurant = restaurants[random.randint(0, len(restaurants)-1)]
     if customerGetRestaurantByID(restaurant['uid'], status_code=200, testMsg="Customer get Restaurant by ID: "):
         count += 1
     if customerGetRestaurantByID("wrongid", status_code=404, testMsg="Customer get Restaurant by Wrong ID: "):
@@ -495,6 +496,9 @@ if __name__ == "__main__":
         count += 1
 
     if customerReviewRestaurant(restaurant['uid'], 5, "Good Food", status_code=200, testMsg="Customer Review Restaurant: "):
+        count += 1
+
+    if customerReviewDeliveryAgent(delivererID, 5, "Good Delivery", status_code=200, testMsg="Customer Review Delivery Agent: "):
         count += 1
     
 

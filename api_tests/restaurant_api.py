@@ -12,6 +12,7 @@ load_dotenv()
 BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
 token=""
+dishID = ""
 
 def restaurantLogin(email, password, status_code=200, testMsg=""):
     url = f"{BACKEND_API_URL}/restaurant/login"
@@ -225,14 +226,15 @@ def restaurantAddFoodItem(name, price, status_code=200, testMsg=""):
     schema = {
         'type': 'object',
         'properties': {
-            'success': {'type': 'boolean'},
             'uid': {'type': 'string'}
         },
-        'required': ['success', 'uid']
+        'required': ['uid']
     }
 
     try:
         response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
+        global dishID
+        dishID = response['uid']
     except Exception as e:
         print(e)
         print(testMsg + "FAILED")
@@ -278,9 +280,9 @@ def restaurantRemoveFoodItem(uid, status_code=200, testMsg=""):
     schema = {
         'type': 'object',
         'properties': {
-            'success': {'type': 'boolean'}
+            'message': {'type': 'string'}
         },
-        'required': ['success']
+        'required': ['message']
     }
 
     try:
@@ -309,9 +311,8 @@ def restaurantUpdateFoodItem(uid, name, price, isAvailable, status_code=200, tes
     schema = {
         'type': 'object',
         'properties': {
-            'success': {'type': 'boolean'}
+            'message': {'type': 'string'}
         },
-        'required': ['success']
     }
 
     try:
@@ -338,7 +339,7 @@ def restaurantReviews(status_code=200, testMsg=""):
     }
 
     try:
-        response = get(url, headers=headers, status_code=status_code, schema=schema)
+        response = post(url, headers=headers, data={}, status_code=status_code, schema=schema)
     except Exception as e:
         print(e)
         print(testMsg + "FAILED")
@@ -350,16 +351,24 @@ def restaurantReviews(status_code=200, testMsg=""):
 
 parent_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CREATION_DATA_PATH = os.path.join(parent_directory, 'creation_data', 'restaurants.json')
+REST_DATA_PATH = os.path.join(parent_directory, 'add_data', 'test_data', 'restaurants.json')
 
 if __name__ == "__main__":
     count = 0
 
     restaurants = json.load(open(CREATION_DATA_PATH))
-    restaurant = restaurants[random.randint(0, len(restaurants)-3)]
+    restaurant = restaurants[random.randint(0, len(restaurants)-1)]
     print(restaurant)
     if restaurantSignup(restaurant['name'], restaurant['email'], restaurant['phone'], restaurant['password'], restaurant['address'], restaurant['timings'], restaurant['tags'], status_code=201, testMsg="Successful Restaurant signup test: "):
         count += 1
     if restaurantSignup(restaurant['name'], restaurant['email'], restaurant['phone'], restaurant['password'], restaurant['address'], restaurant['timings'], restaurant['tags'], status_code=406, testMsg="Duplicate Restaurant signup test: "):
+        count += 1
+
+    restaurants = json.load(open(REST_DATA_PATH))
+    restaurant = restaurants[random.randint(0, len(restaurants)-1)]
+    if restaurantLogin(restaurant['email'], restaurant['password'], status_code=200, testMsg="Restaurant Login test: "):
+        count += 1
+    if restaurantLogin(restaurant['email'], "wrongpassword", status_code=400, testMsg="Incorrect Password test: "):
         count += 1
     
     if restaurantInfo(status_code=200, testMsg="Restaurant Info test: "):
@@ -369,6 +378,18 @@ if __name__ == "__main__":
         count += 1
 
     if restaurantOrders(status_code=200, testMsg="Restaurant Orders test: "):
+        count += 1
+
+    if restaurantReviews(status_code=200, testMsg="Restaurant Reviews test: "):
+        count += 1
+
+    if restaurantAddFoodItem("Test Dish", 100, status_code=200, testMsg="Add Dish test: "):
+        count += 1
+
+    if restaurantUpdateFoodItem(dishID, "Test Dish Edit", 100, True, status_code=200, testMsg="Update Dish test: "):
+        count += 1
+
+    if restaurantRemoveFoodItem(dishID, status_code=200, testMsg="Remove Dish test: "):
         count += 1
     
 
