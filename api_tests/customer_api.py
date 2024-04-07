@@ -12,6 +12,7 @@ load_dotenv()
 BACKEND_API_URL = os.getenv('BACKEND_API_URL', 'http://localhost:3000')
 
 token=""
+testOrderID = ""
 
 def customerLogin(email, password, status_code=200):
     url = f"{BACKEND_API_URL}/customer/login"
@@ -169,6 +170,33 @@ def customerOrderByID(order_id, status_code=200, testMsg=""):
 
     try:
         response = get(url, headers=headers, status_code=status_code, schema=schema, testMsg="")
+    except Exception as e:
+        print(e)
+        print(testMsg + "FAILED")
+        return False
+    
+    print(testMsg + "PASSED")
+    return True
+
+def customerNewOrder(restaurant_id, items, status_code=200, testMsg=""):
+    url = f"{BACKEND_API_URL}/customer/order"
+    headers = {
+        "Authorization": f"Bearer {token}"
+    }
+
+    data = {
+        "restaurant": restaurant_id,
+        "items": items
+    }
+
+    schema = {
+        'type': 'object',
+    }
+
+    try:
+        response = post(url, headers=headers, data=data, status_code=status_code, schema=schema)
+        global testOrderID
+        testOrderID = response['uid']
     except Exception as e:
         print(e)
         print(testMsg + "FAILED")
@@ -385,23 +413,60 @@ def customerGetRecommendations(status_code=200, testMsg=""):
 parent_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CREATION_DATA_PATH = os.path.join(parent_directory, 'creation_data', 'customers.json')
 
+TEST_DATA_PATH = os.path.join(parent_directory, 'add_data', 'customers.json')
+RESTAURANT_DATA_PATH = os.path.join(parent_directory, 'add_data', 'restaurants.json')
+DISHES_DATA_PATH = os.path.join(parent_directory, 'add_data', 'store_dishes.json')
+
 if __name__ == "__main__":
     count = 0
 
     customers = json.load(open(CREATION_DATA_PATH))
     customer = customers[random.randint(0, len(customers)-1)]
-    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Customer Signup test: "):
+    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=201, testMsg="Successful Customer Signup: "):
         count += 1
-    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Customer Signup test: "):
+    if customerSignup(customer['email'], customer['password'], customer['name'], customer['phone'], customer['address'], status_code=406, testMsg="Duplicate Customer Signup: "):
+        count += 1
+
+    customers = json.load(open(TEST_DATA_PATH))
+    customer = customers[random.randint(0, len(customers)-1)]
+
+    if customerLogin(customer['email'], customer['password'], status_code=200, testMsg="Successful Customer Login: "):
+        count += 1
+    if customerLogin(customer['email'], "wrongpassword", status_code=400, testMsg="Incorrect Customer Login: "):
         count += 1
 
     if customerInfo(status_code=200):
         count += 1
 
+    restaurants = json.load(open(RESTAURANT_DATA_PATH))
+    restaurant = restaurants[random.randint(0, len(restaurants)-1)]
+    dishes = json.load(open(DISHES_DATA_PATH))
+    itemList = []
+    for dish in dishes:
+        if dish['restaurant'] == restaurant['uid']:
+            itemList.append({
+                "dish": dish['uid'],
+                "quantity": random.randint(1, 5)
+            })
+
+    if customerNewOrder(restaurant['uid'], itemList, status_code=200, testMsg="Customer New Order: "):
+        count += 1
+    if customerNewOrder("wrongid", itemList, status_code=406, testMsg="Customer Incorrect New Order: "):
+        count += 1
+
     if customerOrders(status_code=200, testMsg="Customer get Orders: "):
         count += 1
 
+    if customerOrderByID(testOrderID, status_code=200, testMsg="Customer get Order by ID: "):
+        count += 1
+
     if customerGetRestaurants(status_code=200, testMsg="Customer get Restaurants: "):
+        count += 1
+
+    restaurant = restaurants[random.randint(0, len(restaurants)-1)]
+    if customerGetRestaurantByID(restaurant['uid'], status_code=200, testMsg="Customer get Restaurant by ID: "):
+        count += 1
+    if customerGetRestaurantByID("wrongid", status_code=404, testMsg="Customer get Restaurant by Wrong ID: "):
         count += 1
     
     if customerFavouriteRestaurants(status_code=200, testMsg="Customer get Favourite Restaurants: "):

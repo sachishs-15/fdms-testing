@@ -34,6 +34,7 @@ with open('data/dishes.json') as f:
     dishes = json.load(f)
     
 added_dishes = []
+store_dishes = []
 db['dishes'].drop()
 
 
@@ -52,9 +53,14 @@ for restaurant in restaurants:
         dish_cpy["restaurant"] = {}
         dish_cpy["restaurant"] = ObjectId(restid)
         added_dishes.append(dish_cpy)
+        store_dishes.append(dish_cpy)
+        store_dishes[-1]["restaurant"] = restaurant["uid"]
 
-#print(added_dishes)
+# print(added_dishes)
 # added_dishes = json.dumps(added_dishes)
+store_dishes = json.dumps(store_dishes, indent=4)
+with open('data/store_dishes.json', 'w') as f:
+    f.write(store_dishes)
 
 db['dishes'].insert_many(added_dishes)
 
