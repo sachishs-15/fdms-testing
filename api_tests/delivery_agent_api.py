@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import sys
 
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from helpers.BaseRequest import get, post, put
@@ -162,10 +163,9 @@ def deliveryAgentOrderByID(uid, status_code=200, testMsg=""):
         "properties": {
             "uid": {"type": "string"},
             "restaurant": {"type": "object"},
-            "delivery_agent": {"type": "object"},
+            "deliverer": {"type": "object"},
             "items": {"type": "array"},
             "total": {"type": "number"},
-            "status": {"type": "string"},
             "isCompleted": {"type": "boolean"},
         },
         "required": [
@@ -173,8 +173,7 @@ def deliveryAgentOrderByID(uid, status_code=200, testMsg=""):
             "restaurant",
             "items",
             "total",
-            "status",
-            "delivery_agent",
+            "deliverer",
             "isCompleted",
         ],
     }
@@ -191,7 +190,7 @@ def deliveryAgentOrderByID(uid, status_code=200, testMsg=""):
 
 
 def deliveryAgentFinishOrder(uid, otp, status_code=200, testMsg=""):
-    url = f"{BACKEND_API_URL}/delivery-agent/orders/{uid}"
+    url = f"{BACKEND_API_URL}/delivery-agent/order/{uid}"
     headers = {"Authorization": f"Bearer {token}"}
 
     data = {"otp": otp}
@@ -291,10 +290,12 @@ CREATION_DATA_PATH = os.path.join(
     parent_directory, "creation_data", "delivery-agents.json"
 )
 EXISTING_DATA_PATH = os.path.join(
-    parent_directory, "add_data", "data", "delivery-agent.json"
+    parent_directory, "add_data", "test_data", "deliverers.json"
 )
 
-if __name__ == "__main__":
+
+def run_delivery_agent_tests():
+    print("Running Delivery Agent API tests...")
     tests_conducted = 0
     count = 0
 
@@ -323,7 +324,7 @@ if __name__ == "__main__":
     ):
         count += 1
 
-    deliveryAgent = json.load(open(EXISTING_DATA_PATH))
+    deliveryAgent = json.load(open(EXISTING_DATA_PATH))[0]
 
     tests_conducted += 1
     if deliveryAgentLogin(
@@ -370,7 +371,7 @@ if __name__ == "__main__":
         ):
             count += 1
 
-        otp = orders.find_one({"_id": orderId})["otp"]
+        otp = orders.find_one({"_id": ObjectId(orderId)})["otp"]
         tests_conducted += 1
         if deliveryAgentFinishOrder(
             orderId, otp=otp, status_code=200, testMsg="Agent Finish Order test: "
@@ -388,3 +389,8 @@ if __name__ == "__main__":
         count += 1
 
     print(f"{count}/{tests_conducted} tests passed")
+
+
+if __name__ == "__main__":
+
+    run_delivery_agent_tests()
