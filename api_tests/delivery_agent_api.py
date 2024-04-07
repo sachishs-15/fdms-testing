@@ -15,7 +15,7 @@ load_dotenv()
 
 BACKEND_API_URL = os.getenv("BACKEND_API_URL", "http://localhost:3000/api")
 client = MongoClient(os.getenv("MONGOURI"))
-db = client["testP"]
+db = client["test"]
 deliverers = db["deliverers"]
 orders = db["orders"]
 

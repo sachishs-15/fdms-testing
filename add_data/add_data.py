@@ -19,9 +19,9 @@ def handlePassword(password):
 def generate_test_database():
 
     client = MongoClient(
-        "mongodb+srv://rishitgarg04:ZVZ5NCaJlfE9kXV3@fdsm.vktwd8o.mongodb.net/testP?retryWrites=true&w=majority&appName=FDSM"
+        os.getenv("MONGOURI")
     )
-    db = client["testP"]
+    db = client["test"]
     collection = db["restaurants"]
     collection.drop()
     collection = db["restaurants"]
