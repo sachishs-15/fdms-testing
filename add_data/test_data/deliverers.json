@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Michael Davis",
+        "email": "michaeldavis6@hotmail.com",
+        "uid": "DELXYZ456DEF789",
+        "password": "testdel123",
+        "phone": "3334445555",
+        "workingStatus": 1,
+        "location": {
+            "lat": 28.6129,
+            "lon": 77.2295
+        },
+        "rating": 4,
+        "reviews": [],
+        "__v": 0
+    },
+    {
+        "name": "Emily Brown",
+        "email": "emilybrown5@yahoo.com",
+        "uid": "DELXYZ789ABC012",
+        "password": "testdel123",
+        "phone": "7778889999",
+        "workingStatus": 1,
+        "location": {
+            "lat": 28.6129,
+            "lon": 77.2295
+        },
+        "rating": 5,
+        "reviews": [],
+        "__v": 0
+    },
+    {
+        "name": "Jane Smith",
+        "email": "janesmith2@yahoo.com",
+        "uid": "DELBCA789XYZ012",
+        "password": "testdel123",
+        "phone": "9876543210",
+        "workingStatus": 1,
+        "location": {
+            "lat": 28.6129,
+            "lon": 77.2295
+        },
+        "rating": 5,
+        "reviews": [],
+        "__v": 0
+    },
+    {
+        "name": "Sophia Miller",
+        "email": "sophiamiller7@gmail.com",
+        "uid": "DELXYZ789DEF012",
+        "password": "testdel123",
+        "phone": "6667778888",
+        "workingStatus": 1,
+        "location": {
+            "lat": 28.6129,
+            "lon": 77.2295
+        },
+        "rating": 3,
+        "reviews": [],
+        "__v": 0
+    },
+    {
+        "name": "Bob Williams",
+        "email": "bobwilliams4@gmail.com",
+        "uid": "DELXYZ123ABC456",
+        "password": "testdel123",
+        "phone": "4445556666",
+        "workingStatus": 1,
+        "location": {
+            "lat": 28.6129,
+            "lon": 77.2295
+        },
+        "rating": 4,
+        "reviews": [],
+        "__v": 0
+    }
+]
