@@ -388,7 +388,7 @@ def run_delivery_agent_tests():
     if deliveryAgentReviews(status_code=200, testMsg="Agent Reviews test: "):
         count += 1
 
-    print(f"{count}/{tests_conducted} tests passed")
+    print(f"{count}/{tests_conducted} tests passed.\n")
 
 
 if __name__ == "__main__":
