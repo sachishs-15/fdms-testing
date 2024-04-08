@@ -23,6 +23,8 @@ pip install -r requirements.txt
   - MONGOURI
   - TEST_DB_NAME
   - BACKEND_API_URL
+- Create the directory add_data/test_data
+
 - Run the tests as
 
 ```
