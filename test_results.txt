@@ -1,0 +1,78 @@
+Initializing test database...
+Test data inserted successfully!
+
+Running tests...
+
+Running Customer API tests...
+Customer signup test: PASSED
+Customer signup test with duplicate email: PASSED
+Customer login test: PASSED
+Customer login test with incorrect password: PASSED
+Customer get info test: PASSED
+Customer place order test: PASSED
+Customer place order test with incorrect data: PASSED
+Customer get orders test: PASSED
+Customer get order by ID test: PASSED
+Customer get restaurant list test: PASSED
+Customer get restaurant by ID test: PASSED
+Customer get restaurant by ID test with wrong ID: PASSED
+Customer get favourite restaurant list test: PASSED
+Customer add new favourite restaurant test: PASSED
+Customer remove favourite restaurant test: PASSED
+Customer restaurant reccomendations test: PASSED
+Customer get offers test: PASSED
+Customer review restaurant test: PASSED
+Customer review delivery agent test: PASSED
+19/19 tests passed.
+
+Running Delivery Agent API tests...
+Delivery agent signup test: PASSED
+Delivery agent signup test with duplicate email: PASSED
+Delivery agent login test: PASSED
+Delivery agent get info test: PASSED
+Delivery agent edit info test: PASSED
+Delivery agent pause working test: PASSED
+Delivery agent update location test: PASSED
+Delivery agent get orders test: PASSED
+Delivery agent get order by ID test: PASSED
+Delivery agent finish order test: PASSED
+Delivery agent get order by ID test with wrong ID: PASSED
+Delivery agent get reviews test: PASSED
+12/12 tests passed.
+
+Running Restaurant API tests...
+Restaurant signup test: PASSED
+Restaurant signup test with duplicate email: PASSED
+Restaurant Login test: PASSED
+Restaurant Login test with incorrect password: PASSED
+Restaurant get info test: PASSED
+Restaurant edit info test: PASSED
+Restaurant get menu test: PASSED
+Restaurant get orders test: PASSED
+Restaurant get reviews test: PASSED
+Restaurant add new dish test: PASSED
+Restaurant edit dish test: PASSED
+Restaurant remove dish test: PASSED
+12/12 tests passed.
+
+Running Management Tests...
+Management login test: PASSED
+Management get info test: PASSED
+Management get customer list test: PASSED
+Management get delivery agent list test: PASSED
+Management get restaurant list test: PASSED
+Management get customer by ID test: PASSED
+Management get orders by customer test: PASSED
+Management get delivery agent by ID test: PASSED
+Management get orders by delivery agent test: PASSED
+Management mark delivery agent dues paid test: PASSED
+Management get restaurant by ID test: PASSED
+Management get orders by restaurant test: PASSED
+Management mark restaurant dues paid test: PASSED
+Management get offers test: PASSED
+Management create offer test: PASSED
+Management delete offer test: PASSED
+16/16 tests passed.
+
+Total cases = 59
+Cases passed = 59
