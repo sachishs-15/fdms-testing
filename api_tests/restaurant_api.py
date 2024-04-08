@@ -413,6 +413,18 @@ def run_restaurant_tests():
         count += 1
 
     tests_conducted += 1
+    if restaurantEditInfo(
+        "Changed Restaurant",
+        restaurant["phone"],
+        restaurant["address"],
+        restaurant["timings"],
+        restaurant["tags"],
+        status_code=200,
+        testMsg="Restaurant edit info test: ",
+    ):
+        count += 1
+
+    tests_conducted += 1
     if restaurantMenu(status_code=200, testMsg="Restaurant get menu test: "):
         count += 1
 

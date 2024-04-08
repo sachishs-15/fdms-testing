@@ -7,7 +7,7 @@ from add_data.add_data import generate_test_database
 # initialize the database with test data
 print("Initializing test database...")
 generate_test_database()
-print("Running tests...\n")
+print("\nRunning tests...\n")
 # run the tests
 
 # run the customer tests
