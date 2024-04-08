@@ -18,10 +18,8 @@ def handlePassword(password):
 
 def generate_test_database():
 
-    client = MongoClient(
-        os.getenv("MONGOURI")
-    )
-    db = client["test"]
+    client = MongoClient(os.getenv("MONGOURI"))
+    db = client[os.getenv("TEST_DB_NAME")]
     collection = db["restaurants"]
     collection.drop()
     collection = db["restaurants"]

@@ -15,7 +15,7 @@ def handlePassword(password):
 
 
 client = MongoClient(os.getenv("MONGOURI"))
-db = client["test"]
+db = client[os.getenv("TEST_DB_NAME")]
 
 with open("add_data/data/delivery-agent.json") as f:
     delivery_agent = json.load(f)
