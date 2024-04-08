@@ -424,24 +424,30 @@ def run_management_tests():
         management["email"],
         management["password"],
         status_code=200,
-        testMsg="Management Login Test ",
+        testMsg="Management login test: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if managementInfo(status_code=200, testMsg="Management Info Test "):
+    if managementInfo(status_code=200, testMsg="Management get info test: "):
         count += 1
 
     tests_conducted += 1
-    if managementCustomers(status_code=200, testMsg="Management Customers Test "):
+    if managementCustomers(
+        status_code=200, testMsg="Management get customer list test: "
+    ):
         count += 1
 
     tests_conducted += 1
-    if managementDeliverers(status_code=200, testMsg="Management Deliverers Test "):
+    if managementDeliverers(
+        status_code=200, testMsg="Management get delivery agent list test: "
+    ):
         count += 1
 
     tests_conducted += 1
-    if managementRestaurants(status_code=200, testMsg="Management Restaurants Test "):
+    if managementRestaurants(
+        status_code=200, testMsg="Management get restaurant list test: "
+    ):
         count += 1
 
     if "customer" in testIDs:
@@ -449,7 +455,7 @@ def run_management_tests():
         if managementCustomerById(
             testIDs["customer"],
             status_code=200,
-            testMsg="Management Customer By ID Test ",
+            testMsg="Management get customer by ID test: ",
         ):
             count += 1
 
@@ -457,7 +463,7 @@ def run_management_tests():
         if managementOrdersbyCustomer(
             testIDs["customer"],
             status_code=200,
-            testMsg="Management Orders By Customer Test ",
+            testMsg="Management get orders by customer test: ",
         ):
             count += 1
 
@@ -466,7 +472,7 @@ def run_management_tests():
         if managementDelivererById(
             testIDs["deliverer"],
             status_code=200,
-            testMsg="Management Deliverer By ID Test ",
+            testMsg="Management get delivery agent by ID test: ",
         ):
             count += 1
 
@@ -474,13 +480,15 @@ def run_management_tests():
         if managementOrdersbyDeliverer(
             testIDs["deliverer"],
             status_code=200,
-            testMsg="Management Orders By Deliverer Test ",
+            testMsg="Management get orders by delivery agent test: ",
         ):
             count += 1
 
         tests_conducted += 1
         if managementMarkPaid(
-            testIDs["deliverer"], status_code=200, testMsg="Management Mark Paid Test "
+            testIDs["deliverer"],
+            status_code=200,
+            testMsg="Management mark delivery agent dues paid test: ",
         ):
             count += 1
 
@@ -490,7 +498,7 @@ def run_management_tests():
         if managementRestaurantById(
             testIDs["restaurant"],
             status_code=200,
-            testMsg="Management Restaurant By ID Test ",
+            testMsg="Management get restaurant by ID test: ",
         ):
             count += 1
 
@@ -498,7 +506,7 @@ def run_management_tests():
         if managementOrdersbyRestaurant(
             testIDs["restaurant"],
             status_code=200,
-            testMsg="Management Orders By Restaurant Test ",
+            testMsg="Management get orders by restaurant test: ",
         ):
             count += 1
 
@@ -506,23 +514,23 @@ def run_management_tests():
         if managementMarkPaidRes(
             testIDs["restaurant"],
             status_code=200,
-            testMsg="Management Mark Paid Restaurant Test ",
+            testMsg="Management mark restaurant dues paid test: ",
         ):
             count += 1
 
     tests_conducted += 1
-    if managementOffers(status_code=200, testMsg="Management Offers Test "):
+    if managementOffers(status_code=200, testMsg="Management get offers test: "):
         count += 1
 
     tests_conducted += 1
     if managementCreateOffer(
-        "TESTOFFER", 10, status_code=200, testMsg="Management Create Offer Test "
+        "TESTOFFER", 10, status_code=200, testMsg="Management create offer test: "
     ):
         count += 1
 
     tests_conducted += 1
     if managementDeleteOffer(
-        "TESTOFFER", status_code=200, testMsg="Management Delete Offer Test "
+        "TESTOFFER", status_code=200, testMsg="Management delete offer test: "
     ):
         count += 1
 

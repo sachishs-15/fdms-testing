@@ -15,7 +15,7 @@ load_dotenv()
 
 BACKEND_API_URL = os.getenv("BACKEND_API_URL", "http://localhost:3000/api")
 client = MongoClient(os.getenv("MONGOURI"))
-db = client["test"]
+db = client[os.getenv("TEST_DB_NAME")]
 deliverers = db["deliverers"]
 orders = db["orders"]
 
@@ -309,7 +309,7 @@ def run_delivery_agent_tests():
         deliveryAgent["name"],
         deliveryAgent["phone"],
         status_code=201,
-        testMsg="Successful Agent Signup test: ",
+        testMsg="Delivery agent signup test: ",
     ):
         count += 1
 
@@ -320,7 +320,7 @@ def run_delivery_agent_tests():
         deliveryAgent["name"],
         deliveryAgent["phone"],
         status_code=406,
-        testMsg="Duplicate Agent Signup test: ",
+        testMsg="Delivery agent signup test with duplicate email: ",
     ):
         count += 1
 
@@ -331,12 +331,12 @@ def run_delivery_agent_tests():
         deliveryAgent["email"],
         deliveryAgent["password"],
         status_code=200,
-        testMsg="Agent Login test: ",
+        testMsg="Delivery agent login test: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if deliveryAgentInfo(status_code=200, testMsg="Agent Info test: "):
+    if deliveryAgentInfo(status_code=200, testMsg="Delivery agent get info test: "):
         count += 1
 
     tests_conducted += 1
@@ -344,48 +344,57 @@ def run_delivery_agent_tests():
         "Changed Devliery Agent",
         "1234567890",
         status_code=200,
-        testMsg="Agent Edit Info test: ",
+        testMsg="Delivery agent edit info test: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if deliveryAgentPauseWorking(status_code=200, testMsg="Agent Pause Working test: "):
+    if deliveryAgentPauseWorking(
+        status_code=200, testMsg="Delivery agent pause working test: "
+    ):
         count += 1
 
     tests_conducted += 1
     if deliveryAgentUpdateLocation(
         {"lat": 23.8103, "lon": 90.4125},
         status_code=200,
-        testMsg="Agent Update Location test: ",
+        testMsg="Delivery agent update location test: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if deliveryAgentOrders(status_code=200, testMsg="Agent Orders test: "):
+    if deliveryAgentOrders(status_code=200, testMsg="Delivery agent get orders test: "):
         count += 1
 
     if orderId:
         tests_conducted += 1
         if deliveryAgentOrderByID(
-            orderId, status_code=200, testMsg="Agent Order By ID test: "
+            orderId, status_code=200, testMsg="Delivery agent get order by ID test: "
         ):
             count += 1
 
         otp = orders.find_one({"_id": ObjectId(orderId)})["otp"]
         tests_conducted += 1
         if deliveryAgentFinishOrder(
-            orderId, otp=otp, status_code=200, testMsg="Agent Finish Order test: "
+            orderId,
+            otp=otp,
+            status_code=200,
+            testMsg="Delivery agent finish order test: ",
         ):
             count += 1
 
     tests_conducted += 1
     if deliveryAgentOrderByID(
-        "invalid", status_code=400, testMsg="Invalid Order ID test: "
+        "invalid",
+        status_code=400,
+        testMsg="Delivery agent get order by ID test with wrong ID: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if deliveryAgentReviews(status_code=200, testMsg="Agent Reviews test: "):
+    if deliveryAgentReviews(
+        status_code=200, testMsg="Delivery agent get reviews test: "
+    ):
         count += 1
 
     print(f"{count}/{tests_conducted} tests passed.\n")

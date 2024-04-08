@@ -448,7 +448,7 @@ def run_customer_tests():
         customer["phone"],
         customer["address"],
         status_code=201,
-        testMsg="Successful Customer Signup: ",
+        testMsg="Customer signup test: ",
     ):
         count += 1
 
@@ -460,7 +460,7 @@ def run_customer_tests():
         customer["phone"],
         customer["address"],
         status_code=406,
-        testMsg="Duplicate Customer Signup: ",
+        testMsg="Customer signup test with duplicate email: ",
     ):
         count += 1
 
@@ -472,7 +472,7 @@ def run_customer_tests():
         customer["email"],
         customer["password"],
         status_code=200,
-        testMsg="Successful Customer Login: ",
+        testMsg="Customer login test: ",
     ):
         count += 1
 
@@ -481,12 +481,12 @@ def run_customer_tests():
         customer["email"],
         "wrongpassword",
         status_code=400,
-        testMsg="Incorrect Customer Login: ",
+        testMsg="Customer login test with incorrect password: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if customerInfo(status_code=200, testMsg="Customer Info: "):
+    if customerInfo(status_code=200, testMsg="Customer get info test: "):
         count += 1
 
     restaurants = json.load(open(RESTAURANT_DATA_PATH))
@@ -503,7 +503,7 @@ def run_customer_tests():
         itemList,
         customer["address"]["text"],
         status_code=200,
-        testMsg="Customer New Order: ",
+        testMsg="Customer place order test: ",
     ):
         count += 1
 
@@ -513,39 +513,45 @@ def run_customer_tests():
         itemList,
         customer["address"]["text"],
         status_code=406,
-        testMsg="Customer Incorrect New Order: ",
+        testMsg="Customer place order test with incorrect data: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if customerOrders(status_code=200, testMsg="Customer get Orders: "):
+    if customerOrders(status_code=200, testMsg="Customer get orders test: "):
         count += 1
 
     tests_conducted += 1
     if customerOrderByID(
-        testOrderID, status_code=200, testMsg="Customer get Order by ID: "
+        testOrderID, status_code=200, testMsg="Customer get order by ID test: "
     ):
         count += 1
 
     tests_conducted += 1
-    if customerGetRestaurants(status_code=200, testMsg="Customer get Restaurants: "):
-        count += 1
-
-    tests_conducted += 1
-    if customerGetRestaurantByID(
-        restaurant["uid"], status_code=200, testMsg="Customer get Restaurant by ID: "
+    if customerGetRestaurants(
+        status_code=200, testMsg="Customer get restaurant list test: "
     ):
         count += 1
 
     tests_conducted += 1
     if customerGetRestaurantByID(
-        "wrongid", status_code=406, testMsg="Customer get Restaurant by Wrong ID: "
+        restaurant["uid"],
+        status_code=200,
+        testMsg="Customer get restaurant by ID test: ",
+    ):
+        count += 1
+
+    tests_conducted += 1
+    if customerGetRestaurantByID(
+        "wrongid",
+        status_code=406,
+        testMsg="Customer get restaurant by ID test with wrong ID: ",
     ):
         count += 1
 
     tests_conducted += 1
     if customerFavouriteRestaurants(
-        status_code=200, testMsg="Customer get Favourite Restaurants: "
+        status_code=200, testMsg="Customer get favourite restaurant list test: "
     ):
         count += 1
 
@@ -553,7 +559,7 @@ def run_customer_tests():
     if customerAddFavouriteRestaurant(
         restaurant["uid"],
         status_code=200,
-        testMsg="Customer Add Favourite Restaurant: ",
+        testMsg="Customer add new favourite restaurant test: ",
     ):
         count += 1
 
@@ -561,18 +567,18 @@ def run_customer_tests():
     if customerRemoveFavouriteRestaurant(
         restaurant["uid"],
         status_code=200,
-        testMsg="Customer Remove Favourite Restaurant: ",
+        testMsg="Customer remove favourite restaurant test: ",
     ):
         count += 1
 
     tests_conducted += 1
     if customerGetRecommendations(
-        status_code=200, testMsg="Customer get Recommended Restaurants: "
+        status_code=200, testMsg="Customer restaurant reccomendations test: "
     ):
         count += 1
 
     tests_conducted += 1
-    if customerGetOffers(status_code=200, testMsg="Customer get Offers: "):
+    if customerGetOffers(status_code=200, testMsg="Customer get offers test: "):
         count += 1
 
     tests_conducted += 1
@@ -581,7 +587,7 @@ def run_customer_tests():
         5,
         "Good Food",
         status_code=200,
-        testMsg="Customer Review Restaurant: ",
+        testMsg="Customer review restaurant test: ",
     ):
         count += 1
 
@@ -591,7 +597,7 @@ def run_customer_tests():
         5,
         "Good Delivery",
         status_code=200,
-        testMsg="Customer Review Delivery Agent: ",
+        testMsg="Customer review delivery agent test: ",
     ):
         count += 1
 

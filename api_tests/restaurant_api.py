@@ -369,7 +369,7 @@ def run_restaurant_tests():
         restaurant["timings"],
         restaurant["tags"],
         status_code=201,
-        testMsg="Successful Restaurant signup test: ",
+        testMsg="Restaurant signup test: ",
     ):
         count += 1
 
@@ -383,7 +383,7 @@ def run_restaurant_tests():
         restaurant["timings"],
         restaurant["tags"],
         status_code=406,
-        testMsg="Duplicate Restaurant signup test: ",
+        testMsg="Restaurant signup test with duplicate email: ",
     ):
         count += 1
 
@@ -404,29 +404,29 @@ def run_restaurant_tests():
         restaurant["email"],
         "wrongpassword",
         status_code=400,
-        testMsg="Incorrect Password test: ",
+        testMsg="Restaurant Login test with incorrect password: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if restaurantInfo(status_code=200, testMsg="Restaurant Info test: "):
+    if restaurantInfo(status_code=200, testMsg="Restaurant get info test: "):
         count += 1
 
     tests_conducted += 1
-    if restaurantMenu(status_code=200, testMsg="Restaurant Menu test: "):
+    if restaurantMenu(status_code=200, testMsg="Restaurant get menu test: "):
         count += 1
 
     tests_conducted += 1
-    if restaurantOrders(status_code=200, testMsg="Restaurant Orders test: "):
+    if restaurantOrders(status_code=200, testMsg="Restaurant get orders test: "):
         count += 1
 
     tests_conducted += 1
-    if restaurantReviews(status_code=200, testMsg="Restaurant Reviews test: "):
+    if restaurantReviews(status_code=200, testMsg="Restaurant get reviews test: "):
         count += 1
 
     tests_conducted += 1
     if restaurantAddFoodItem(
-        "Test Dish", 100, status_code=200, testMsg="Add Dish test: "
+        "Test Dish", 100, status_code=200, testMsg="Restaurant add new dish test: "
     ):
         count += 1
 
@@ -437,12 +437,14 @@ def run_restaurant_tests():
         100,
         True,
         status_code=200,
-        testMsg="Update Dish test: ",
+        testMsg="Restaurant edit dish test: ",
     ):
         count += 1
 
     tests_conducted += 1
-    if restaurantRemoveFoodItem(dishID, status_code=200, testMsg="Remove Dish test: "):
+    if restaurantRemoveFoodItem(
+        dishID, status_code=200, testMsg="Restaurant remove dish test: "
+    ):
         count += 1
 
     print(f"{count}/{tests_conducted} tests passed.\n")
