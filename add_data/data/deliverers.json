@@ -3,7 +3,7 @@
     "name": "John Doe",
     "email": "johndoe1@gmail.com",
     "uid": "DELABC123XYZ456",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "1234567890",
     "workingStatus": 1,
     "location": {
@@ -18,7 +18,7 @@
     "name": "Jane Smith",
     "email": "janesmith2@yahoo.com",
     "uid": "DELBCA789XYZ012",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "9876543210",
     "workingStatus": 1,
     "location": {
@@ -33,7 +33,7 @@
     "name": "Alice Johnson",
     "email": "alicejohnson3@hotmail.com",
     "uid": "DELXYZ456ABC789",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "1112223333",
     "workingStatus": 1,
     "location": {
@@ -48,7 +48,7 @@
     "name": "Bob Williams",
     "email": "bobwilliams4@gmail.com",
     "uid": "DELXYZ123ABC456",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "4445556666",
     "workingStatus": 1,
     "location": {
@@ -63,7 +63,7 @@
     "name": "Emily Brown",
     "email": "emilybrown5@yahoo.com",
     "uid": "DELXYZ789ABC012",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "7778889999",
     "workingStatus": 1,
     "location": {
@@ -78,7 +78,7 @@
     "name": "Michael Davis",
     "email": "michaeldavis6@hotmail.com",
     "uid": "DELXYZ456DEF789",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "3334445555",
     "workingStatus": 1,
     "location": {
@@ -93,7 +93,7 @@
     "name": "Sophia Miller",
     "email": "sophiamiller7@gmail.com",
     "uid": "DELXYZ789DEF012",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "6667778888",
     "workingStatus": 1,
     "location": {
@@ -108,7 +108,7 @@
     "name": "William Wilson",
     "email": "williamwilson8@yahoo.com",
     "uid": "DELXYZ123GHI456",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "9998887777",
     "workingStatus": 1,
     "location": {
@@ -123,7 +123,7 @@
     "name": "Olivia Smith",
     "email": "oliviasmith9@hotmail.com",
     "uid": "DELXYZ789GHI012",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "1112223333",
     "workingStatus": 1,
     "location": {
@@ -138,7 +138,7 @@
     "name": "James Johnson",
     "email": "jamesjohnson10@gmail.com",
     "uid": "DELXYZ123GHI789",
-    "password": "testdel123",
+    "password": "test123",
     "phone": "4445556666",
     "workingStatus": 1,
     "location": {

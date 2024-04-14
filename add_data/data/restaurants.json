@@ -3,7 +3,7 @@
         "name": "Indian Accent",
         "email": "indianaccent@example.com",
         "uid": "RESInd1Acc3nt",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01166175151",
         "image": "",
         "address": {
@@ -28,7 +28,7 @@
         "name": "Bukhara",
         "email": "bukhara@example.com",
         "uid": "RESBukh4r4",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01166513666",
         "image": "",
         "address": {
@@ -53,7 +53,7 @@
         "name": "Dum Pukht",
         "email": "dumpukht@example.com",
         "uid": "RESDumP5kht",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01143666666",
         "image": "",
         "address": {
@@ -78,7 +78,7 @@
         "name": "Farzi Cafe",
         "email": "farzicafe@example.com",
         "uid": "RESF4rziC4f3",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01143555555",
         "image": "",
         "address": {
@@ -103,7 +103,7 @@
         "name": "Karim's",
         "email": "karims@example.com",
         "uid": "RESK4r1ms",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01123269880",
         "image": "",
         "address": {
@@ -128,7 +128,7 @@
         "name": "Punjab Grill",
         "email": "punjabgrill@example.com",
         "uid": "RESPunj4bGr1ll",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01143516666",
         "image": "",
         "address": {
@@ -153,7 +153,7 @@
         "name": "Smoke House Deli",
         "email": "smokehousedeli@example.com",
         "uid": "RESSmok3H0us3D3li",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01140871500",
         "image": "",
         "address": {
@@ -178,7 +178,7 @@
         "name": "The Spice Route",
         "email": "thespiceroute@example.com",
         "uid": "RESTh3Sp1c3R0ut3",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01166765134",
         "image": "",
         "address": {
@@ -203,7 +203,7 @@
         "name": "Gulati",
         "email": "gulati@example.com",
         "uid": "RESGul4t1",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01123345464",
         "image": "",
         "address": {
@@ -228,7 +228,7 @@
         "name": "Andhra Bhavan",
         "email": "andhrabhavan@example.com",
         "uid": "RESAndhr4Bh4v4n",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01123382038",
         "image": "",
         "address": {
@@ -253,7 +253,7 @@
         "name": "Lodi - The Garden Restaurant",
         "email": "lodi@example.com",
         "uid": "RESL0d1Th3G4rd3n",
-        "password": "testrest123",
+        "password": "test123",
         "phone": "01133106666",
         "image": "",
         "address": {

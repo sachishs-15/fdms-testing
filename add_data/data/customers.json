@@ -3,7 +3,7 @@
     "name": "Alice Johnson",
     "email": "alice.johnson@gmail.com",
     "uid": "CUS9kdp9mr2X0",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "1234567890",
     "address": {
       "lat": "28.5244",
@@ -17,7 +17,7 @@
     "name": "Ethan Brown",
     "email": "ethan.brown@yahoo.com",
     "uid": "CUS4ld93kf20L",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "2345678901",
     "address": {
       "lat": "28.6128",
@@ -31,7 +31,7 @@
     "name": "Julia Martinez",
     "email": "julia.martinez@hotmail.com",
     "uid": "CUS5jd93kf11M",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "3456789012",
     "address": {
       "lat": "28.5245",
@@ -45,7 +45,7 @@
     "name": "Michael Smith",
     "email": "michael.smith@gmail.com",
     "uid": "CUS6jdo8lr1V8",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "4567890123",
     "address": {
       "lat": "28.6147",
@@ -59,7 +59,7 @@
     "name": "Sophia Wilson",
     "email": "sophia.wilson@yahoo.com",
     "uid": "CUS7idp0kr3W9",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "5678901234",
     "address": {
       "lat": "28.5562",
@@ -73,7 +73,7 @@
     "name": "Daniel Johnson",
     "email": "daniel.johnson@hotmail.com",
     "uid": "CUS8fdo2lt4X7",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "6789012345",
     "address": {
       "lat": "28.6562",
@@ -87,7 +87,7 @@
     "name": "Olivia Brown",
     "email": "olivia.brown@gmail.com",
     "uid": "CUS3pdo5js2Z6",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "7890123456",
     "address": {
       "lat": "28.5918",
@@ -101,7 +101,7 @@
     "name": "William Martinez",
     "email": "william.martinez@yahoo.com",
     "uid": "CUS2kdo1ph5Y3",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "8901234567",
     "address": {
       "lat": "28.5286",
@@ -115,7 +115,7 @@
     "name": "Emma Smith",
     "email": "emma.smith@hotmail.com",
     "uid": "CUS1pdo9lt0Q8",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "9012345678",
     "address": {
       "lat": "28.6506",
@@ -129,7 +129,7 @@
     "name": "Liam Wilson",
     "email": "liam.wilson@gmail.com",
     "uid": "CUS0kdo3js9Z2",
-    "password": "testcust123",
+    "password": "test123",
     "phone": "0123456789",
     "address": {
       "lat": "28.6139",

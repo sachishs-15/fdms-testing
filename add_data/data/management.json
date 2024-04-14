@@ -3,7 +3,7 @@
     "name": "John Doe",
     "email": "johndoe@gmail.com",
     "uid": "MAN001xyz456",
-    "password": "testman123",
+    "password": "test123",
     "phone": "1234567890",
     "__v": 0
   },
@@ -11,7 +11,7 @@
     "name": "Jane Smith",
     "email": "janesmith@yahoo.com",
     "uid": "MAN002abc789",
-    "password": "testman123",
+    "password": "test123",
     "phone": "2345678901",
     "__v": 0
   },
@@ -19,7 +19,7 @@
     "name": "Robert Johnson",
     "email": "robertjohnson@hotmail.com",
     "uid": "MAN003def012",
-    "password": "testman123",
+    "password": "test123",
     "phone": "3456789012",
     "__v": 0
   },
@@ -27,7 +27,7 @@
     "name": "Emily Davis",
     "email": "emilydavis@gmail.com",
     "uid": "MAN004ghi345",
-    "password": "testman123",
+    "password": "test123",
     "phone": "4567890123",
     "__v": 0
   },
@@ -35,7 +35,7 @@
     "name": "Michael Wilson",
     "email": "michaelwilson@yahoo.com",
     "uid": "MAN005jkl678",
-    "password": "testman123",
+    "password": "test123",
     "phone": "5678901234",
     "__v": 0
   },
@@ -43,7 +43,7 @@
     "name": "Sarah Taylor",
     "email": "sarahtaylor@hotmail.com",
     "uid": "MAN006mno901",
-    "password": "testman123",
+    "password": "test123",
     "phone": "6789012345",
     "__v": 0
   },
@@ -51,7 +51,7 @@
     "name": "William Brown",
     "email": "williambrown@gmail.com",
     "uid": "MAN007pqr234",
-    "password": "testman123",
+    "password": "test123",
     "phone": "7890123456",
     "__v": 0
   },
@@ -59,7 +59,7 @@
     "name": "Amanda Jones",
     "email": "amandajones@yahoo.com",
     "uid": "MAN008stu567",
-    "password": "testman123",
+    "password": "test123",
     "phone": "8901234567",
     "__v": 0
   },
@@ -67,7 +67,7 @@
     "name": "David Garcia",
     "email": "davidgarcia@hotmail.com",
     "uid": "MAN009vwx890",
-    "password": "testman123",
+    "password": "test123",
     "phone": "9012345678",
     "__v": 0
   },
@@ -75,7 +75,7 @@
     "name": "Jennifer Miller",
     "email": "jennifermiller@gmail.com",
     "uid": "MAN010yzab012",
-    "password": "testman123",
+    "password": "test123",
     "phone": "0123456789",
     "__v": 0
   }
