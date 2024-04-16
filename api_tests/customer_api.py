@@ -156,7 +156,7 @@ def customerOrderByID(order_id, status_code=200, testMsg=""):
             "deliverer": {"type": "object"},
             "isRestaurantRated": {"type": "boolean"},
             "isDelivererRated": {"type": "boolean"},
-            "isCompleted": {"type": "boolean"},
+            "status": {"type": "number"},
         },
         "required": [
             "uid",
@@ -166,7 +166,7 @@ def customerOrderByID(order_id, status_code=200, testMsg=""):
             "deliverer",
             "isRestaurantRated",
             "isDelivererRated",
-            "isCompleted",
+            "status",
         ],
     }
 

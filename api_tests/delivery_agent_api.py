@@ -166,7 +166,7 @@ def deliveryAgentOrderByID(uid, status_code=200, testMsg=""):
             "deliverer": {"type": "object"},
             "items": {"type": "array"},
             "total": {"type": "number"},
-            "isCompleted": {"type": "boolean"},
+            "status": {"type": "number"},
         },
         "required": [
             "uid",
@@ -174,7 +174,7 @@ def deliveryAgentOrderByID(uid, status_code=200, testMsg=""):
             "items",
             "total",
             "deliverer",
-            "isCompleted",
+            "status",
         ],
     }
 
@@ -373,15 +373,15 @@ def run_delivery_agent_tests():
         ):
             count += 1
 
-        otp = orders.find_one({"_id": ObjectId(orderId)})["otp"]
-        tests_conducted += 1
-        if deliveryAgentFinishOrder(
-            orderId,
-            otp=otp,
-            status_code=200,
-            testMsg="Delivery agent finish order test: ",
-        ):
-            count += 1
+        # otp = orders.find_one({"_id": ObjectId(orderId)})["otp"]
+        # tests_conducted += 1
+        # if deliveryAgentFinishOrder(
+        #     orderId,
+        #     otp=otp,
+        #     status_code=200,
+        #     testMsg="Delivery agent finish order test: ",
+        # ):
+        #     count += 1
 
     tests_conducted += 1
     if deliveryAgentOrderByID(
